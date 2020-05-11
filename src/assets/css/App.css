@@ -1,0 +1,169 @@
+:root {
+  --helper-color: #68adec;
+  --receiver-color: #ffb067;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 34px;
+  text-align: center;
+  color: #06375b;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.text-box {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  text-align: left;
+  padding: 20px;
+}
+
+header .menuIcon {
+  width: 22px;
+}
+
+.separator {
+  position: relative;
+  width: 116px;
+  border: 5px solid #06375b;
+  margin: 30px 0;
+  border-radius: 10px;
+}
+
+.btn {
+  padding: 20px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.helper-btn,
+.helper-btn:hover,
+.helper-btn:focus,
+.helper-btn:active {
+  background-color: var(--helper-color);
+  border: 0;
+}
+
+.receiver-btn,
+.receiver-btn:hover,
+.receiver-btn:focus,
+.receiver-btn:active {
+  background-color: var(--receiver-color);
+  border: 0;
+}
+
+/* HOME */
+#home #claim {
+  position: relative;
+  background-color: rgba(241, 246, 250, 0.88);
+}
+
+#home #claim .claim-overlay {
+  background-image: url("../img/people-volunteer.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+#home #claim h1,
+#home #claim p {
+  margin: 30px 0;
+}
+
+#home #claim .btn {
+  display: block;
+  width: 100%;
+}
+
+#home-video {
+  background-image: url("../img/hand-holding-remote.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 250px;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home-info {
+  background: #f9fcff;
+  text-align: center;
+}
+
+#home-info h1 {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#home-info .home-feature {
+  margin: 30px 0;
+}
+
+#home-info .home-feature img {
+  margin: 10px 0;
+  height: 100px;
+  width: auto;
+}
+
+/* ENTER */
+
+#intro {
+  padding: 20px 0;
+}
+
+#intro .hands {
+  margin: 30px 0;
+}
+
+#intro .logo {
+  max-width: 80%;
+  margin-bottom: 40px;
+}
+
+#intro h3 {
+  margin-bottom: 40px;
+}
