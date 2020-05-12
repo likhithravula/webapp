@@ -7,10 +7,23 @@ import {
   withRouter
 } from "react-router-dom";
 
-import Navigation from "./components/navigation.js";
-import Home from "./components/pages/home.js";
-import EnterHelper from "./components/pages/enter-helper.js";
-import EnterReceiver from "./components/pages/enter-receiver.js";
+import Navigation from "./components/navigation";
+import Home from "./components/pages/home";
+import EnterHelper from "./components/pages/enter-helper";
+import EnterReceiver from "./components/pages/enter-receiver";
+
+import RegistrationAlternatives from "./components/pages/registration/alternatives";
+import RegistrationBankID from "./components/pages/registration/bankid";
+import RegistrationInformation from "./components/pages/registration/information";
+import RegistrationSkills from "./components/pages/registration/skills";
+import RegistrationFinish from "./components/pages/registration/finish";
+
+import RequestHelpType from "./components/pages/request/helpType"
+import RequestSpecify from "./components/pages/request/specify"
+import RequestConfirmation from "./components/pages/request/confirmation"
+import RequestMap from "./components/pages/request/map"
+
+import HelperMap from "./components/pages/helper/map"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/App.css";
@@ -24,6 +37,16 @@ function App() {
         <Switch>
           <Route path="/enter/helper" component={EnterHelper} />
           <Route path="/enter/receiver" component={EnterReceiver} />
+          <Route path="/registration/alternatives" component={RegistrationAlternatives} />
+          <Route path="/registration/bankid" component={RegistrationBankID} />
+          <Route path="/registration/information" component={RegistrationInformation} />
+          <Route path="/registration/skills" component={RegistrationSkills} />
+          <Route path="/registration/finish" component={RegistrationFinish} />
+          <Route path="/request/helpType" component={RequestHelpType} />
+          <Route path="/request/specify" component={RequestSpecify} />
+          <Route path="/request/confirmation" component={RequestConfirmation} />
+          <Route path="/request/map" component={RequestMap} />
+          <Route path="/helper/map" component={HelperMap} />
           <Route path="/">
             <Home />
           </Route>

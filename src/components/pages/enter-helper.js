@@ -22,9 +22,11 @@ class EnterHelper extends React.Component {
           </div>
 
           <div>
-            <Button className="btn helper-btn">
-              Create an account using BankID
-            </Button>
+            <Link to="/registration/alternatives">
+              <Button className="btn btn-block helper-btn">
+                Start creating your account
+              </Button>
+            </Link>
           </div>
 
           <Link to="">Already have an account? Click here to sign in</Link>
