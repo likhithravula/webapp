@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
-import imageHandHoldingRemote from "../../assets/img/hand-holding-remote.png";
 import imagePlayButton from "../../assets/img/play.png";
 
 import personHeart from "../../assets/img/person-heart.svg";
@@ -35,7 +34,7 @@ class Home extends React.Component {
 
         <div id="home-video">
           <div class="play">
-            <img src={imagePlayButton} />
+            <img alt="" src={imagePlayButton} />
           </div>
         </div>
 
@@ -56,7 +55,7 @@ class Home extends React.Component {
             <h1>How does the digital volunteer work?</h1>
             <div className="home-feature-list">
               <div className="home-feature">
-                <img src={personHeart} />
+                <img alt="" src={personHeart} />
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
                   porttitor facilisis massa vel maximus. Nulla facilisi. Aenean
@@ -64,7 +63,7 @@ class Home extends React.Component {
                 </p>
               </div>
               <div className="home-feature">
-                <img src={handHeart} />
+                <img alt="" src={handHeart} />
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
                   porttitor facilisis massa vel maximus. Nulla facilisi. Aenean
@@ -72,7 +71,7 @@ class Home extends React.Component {
                 </p>
               </div>
               <div className="home-feature">
-                <img src={lockHeart} />
+                <img alt="" src={lockHeart} />
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
                   porttitor facilisis massa vel maximus. Nulla facilisi. Aenean

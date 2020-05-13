@@ -22,7 +22,7 @@ class EnterHelper extends React.Component {
           </div>
 
           <div>
-            <Link to="/registration/alternatives">
+            <Link to="/registration/terms">
               <Button className="btn btn-block helper-btn">
                 Start creating your account
               </Button>
