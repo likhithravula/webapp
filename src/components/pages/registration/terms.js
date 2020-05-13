@@ -16,9 +16,8 @@ class RegistrationTerms extends React.Component {
     this.changeTermsOfServiceFlag = this.changeTermsOfServiceFlag.bind( this )
   }
 
-  changeTermsOfServiceFlag(e)
-  {
-    users.termsOfServiceAccepted = true
+  changeTermsOfServiceFlag(event) {
+    users.termsOfServiceAccepted = event.target.checked
   }
 
   render() {
