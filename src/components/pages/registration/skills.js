@@ -8,7 +8,7 @@ class RegistrationSkills extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <section id="registration_alternatives">
+        <section id="registration_skills">
           <div className="text-box">
             <h3>Tell us how you can help</h3>
             <p>

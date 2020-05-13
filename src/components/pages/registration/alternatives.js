@@ -29,9 +29,9 @@ class RegistrationAlternatives extends React.Component {
           </Form>
 
           <div>
-            <Link to="/registration/bankid">
+            <Link to="/registration/signin">
               <Button className="btn btn-block helper-btn">
-                Next - Sign in with BankID
+                Next - Sign in
               </Button>
             </Link>
           </div>

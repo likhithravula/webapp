@@ -12,8 +12,9 @@ import Home from "./components/pages/home";
 import EnterHelper from "./components/pages/enter-helper";
 import EnterReceiver from "./components/pages/enter-receiver";
 
+import RegistrationTerms from "./components/pages/registration/terms";
 import RegistrationAlternatives from "./components/pages/registration/alternatives";
-import RegistrationBankID from "./components/pages/registration/bankid";
+import RegistrationSignin from "./components/pages/registration/signin";
 import RegistrationInformation from "./components/pages/registration/information";
 import RegistrationSkills from "./components/pages/registration/skills";
 import RegistrationFinish from "./components/pages/registration/finish";
@@ -37,8 +38,9 @@ function App() {
         <Switch>
           <Route path="/enter/helper" component={EnterHelper} />
           <Route path="/enter/receiver" component={EnterReceiver} />
+          <Route path="/registration/terms" component={RegistrationTerms} />
           <Route path="/registration/alternatives" component={RegistrationAlternatives} />
-          <Route path="/registration/bankid" component={RegistrationBankID} />
+          <Route path="/registration/signin" component={RegistrationSignin} />
           <Route path="/registration/information" component={RegistrationInformation} />
           <Route path="/registration/skills" component={RegistrationSkills} />
           <Route path="/registration/finish" component={RegistrationFinish} />

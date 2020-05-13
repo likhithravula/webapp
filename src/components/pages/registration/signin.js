@@ -8,7 +8,7 @@ class RegistrationBankID extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <section id="registration_alternatives">
+        <section id="registration_signin">
           <div className="text-box">
             <h3>Create an account with BankID</h3>
             <p>
