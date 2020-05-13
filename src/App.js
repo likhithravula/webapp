@@ -1,11 +1,6 @@
+import { Provider } from 'mobx-react'
 import React from "react";
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  useLocation,
-  withRouter
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Navigation from "./components/navigation";
 import Home from "./components/pages/home";
@@ -26,34 +21,43 @@ import RequestMap from "./components/pages/request/map"
 
 import HelperMap from "./components/pages/helper/map"
 
+import UserStore from './stores/UserStore'
+
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import "./assets/css/App.css";
 import "./assets/css/media-queries.css";
+
+const stores = {
+  users: new UserStore()
+}
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navigation />
-        <Switch>
-          <Route path="/enter/helper" component={EnterHelper} />
-          <Route path="/enter/receiver" component={EnterReceiver} />
-          <Route path="/registration/terms" component={RegistrationTerms} />
-          <Route path="/registration/alternatives" component={RegistrationAlternatives} />
-          <Route path="/registration/signin" component={RegistrationSignin} />
-          <Route path="/registration/information" component={RegistrationInformation} />
-          <Route path="/registration/skills" component={RegistrationSkills} />
-          <Route path="/registration/finish" component={RegistrationFinish} />
-          <Route path="/request/helpType" component={RequestHelpType} />
-          <Route path="/request/specify" component={RequestSpecify} />
-          <Route path="/request/confirmation" component={RequestConfirmation} />
-          <Route path="/request/map" component={RequestMap} />
-          <Route path="/helper/map" component={HelperMap} />
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <Provider {...stores}>
+        <BrowserRouter>
+          <Navigation />
+          <Switch>
+            <Route path="/enter/helper" component={EnterHelper} />
+            <Route path="/enter/receiver" component={EnterReceiver} />
+            <Route path="/registration/terms" component={RegistrationTerms} />
+            <Route path="/registration/alternatives" component={RegistrationAlternatives} />
+            <Route path="/registration/signin" component={RegistrationSignin} />
+            <Route path="/registration/information" component={RegistrationInformation} />
+            <Route path="/registration/skills" component={RegistrationSkills} />
+            <Route path="/registration/finish" component={RegistrationFinish} />
+            <Route path="/request/helpType" component={RequestHelpType} />
+            <Route path="/request/specify" component={RequestSpecify} />
+            <Route path="/request/confirmation" component={RequestConfirmation} />
+            <Route path="/request/map" component={RequestMap} />
+            <Route path="/helper/map" component={HelperMap} />
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

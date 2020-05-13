@@ -1,12 +1,9 @@
-import { observer } from "mobx-react"
+import { inject, observer } from "mobx-react"
 import React from "react";
 import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
-import UserStore from "../../stores/UserStore"
-const users = new UserStore()
 
 class RegistrationTerms extends React.Component {
 
@@ -17,10 +14,14 @@ class RegistrationTerms extends React.Component {
   }
 
   changeTermsOfServiceFlag(event) {
+    const { users } = this.props;
+
     users.termsOfServiceAccepted = event.target.checked
   }
 
   render() {
+    const { users } = this.props;
+
     return (
       <div className="wrapper">
         <section id="registration_terms">
@@ -53,4 +54,4 @@ class RegistrationTerms extends React.Component {
   }
 }
 
-export default observer( RegistrationTerms );
+export default inject('users')( observer(RegistrationTerms) );
