@@ -14,13 +14,13 @@ class RegistrationTerms extends React.Component {
   }
 
   changeTermsOfServiceFlag(event) {
-    const { users } = this.props;
+    const { registration } = this.props;
 
-    users.termsOfServiceAccepted = event.target.checked
+    registration.termsOfServiceAccepted = event.target.checked
   }
 
   render() {
-    const { users } = this.props;
+    const { registration } = this.props;
 
     return (
       <div className="wrapper">
@@ -33,18 +33,19 @@ class RegistrationTerms extends React.Component {
             <Form.Group>
               <Form.Check type="checkbox" name="termsOfService"
                 label="By creating a ______ account you agree to our Terms Of Service"
-                checked={ users.termsOfServiceAccepted }
+                checked={ registration.termsOfServiceAccepted }
                 onClick={ this.changeTermsOfServiceFlag }
               />
             </Form.Group>
           </Form>
 
-          <div>
-            <Link to="/registration/alternatives">
+          <div className="mt-4">
+            {/* alternatives page is skipped for current sprint */}
+            <Link to="/registration/signin">
               <Button className="btn btn-block helper-btn"
-                disabled={ !users.termsOfServiceAccepted }
+                disabled={ !registration.termsOfServiceAccepted }
               >
-                Next - Choose ...
+                Next - Sign in
               </Button>
             </Link>
           </div>
@@ -54,4 +55,4 @@ class RegistrationTerms extends React.Component {
   }
 }
 
-export default inject('users')( observer(RegistrationTerms) );
+export default inject('registration')( observer(RegistrationTerms) );

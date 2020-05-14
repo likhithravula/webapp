@@ -28,7 +28,7 @@ class RegistrationAlternatives extends React.Component {
             </Form.Group>
           </Form>
 
-          <div>
+          <div className="mt-4">
             <Link to="/registration/signin">
               <Button className="btn btn-block helper-btn">
                 Next - Sign in

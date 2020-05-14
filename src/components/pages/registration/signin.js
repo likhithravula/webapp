@@ -24,7 +24,7 @@ class RegistrationBankID extends React.Component {
             </Form.Group>
           </Form>
 
-          <div>
+          <div className="mt-4">
             <Link to="/registration/information">
               <Button className="btn btn-block helper-btn">
                 Next - Information about you

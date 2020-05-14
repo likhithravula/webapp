@@ -21,7 +21,7 @@ import RequestMap from "./components/pages/request/map"
 
 import HelperMap from "./components/pages/helper/map"
 
-import UserStore from './stores/UserStore'
+import RegistrationStore from './stores/RegistrationStore'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -29,7 +29,7 @@ import "./assets/css/App.css";
 import "./assets/css/media-queries.css";
 
 const stores = {
-  users: new UserStore()
+  registration: new RegistrationStore()
 }
 
 function App() {
