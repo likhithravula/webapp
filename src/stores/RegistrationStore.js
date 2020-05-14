@@ -5,9 +5,9 @@ class RegistrationStore {
   user = {}
 
   constructor()
-    { this.clear() }
+    { this.clearUser() }
 
-  clear() {
+  clearUser() {
     this.user = {
       firstName: '',
       lastName: '',
