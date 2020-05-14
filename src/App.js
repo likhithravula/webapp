@@ -29,7 +29,7 @@ import "./assets/css/App.css";
 import "./assets/css/media-queries.css";
 
 const stores = {
-  users: new UserStore()
+  user: new UserStore()
 }
 
 function App() {
