@@ -16,35 +16,35 @@ class RegistrationInformation extends React.Component {
           <Form>
             <Form.Group>
               <Form.Label>First name</Form.Label>
-              <Form.Control type="text" name="firstName"/>
+              <Form.Control type="text" size="lg" name="firstName"/>
             </Form.Group>
             <Form.Group>
               <Form.Label>Last name</Form.Label>
-              <Form.Control type="text" name="lastName"/>
+              <Form.Control type="text" size="lg" name="lastName"/>
             </Form.Group>
             <Form.Group>
               <Form.Label>Phone number</Form.Label>
-              <Form.Control type="text" name="phone"/>
+              <Form.Control type="text" size="lg" name="phone"/>
             </Form.Group>
             <Form.Group>
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" name="email"/>
+              <Form.Control type="email" size="lg" name="email"/>
             </Form.Group>
             <Form.Group>
               <Form.Label>Address</Form.Label>
-              <Form.Control type="text" name="addressStreet"/>
+              <Form.Control type="text" size="lg" name="addressStreet"/>
             </Form.Group>
             <Form.Group>
               <Form.Label>ZIP Code</Form.Label>
-              <Form.Control type="text" name="addressPostalCode"/>
+              <Form.Control type="text" size="lg" name="addressPostalCode"/>
             </Form.Group>
             <Form.Group>
               <Form.Label>City</Form.Label>
-              <Form.Control type="text" name="addressCity"/>
+              <Form.Control type="text" size="lg" name="addressCity"/>
             </Form.Group>
             <Form.Group>
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" name="password"/>
+              <Form.Control type="password" size="lg" name="password"/>
             </Form.Group>
           </Form>
 

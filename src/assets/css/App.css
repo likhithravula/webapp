@@ -1,4 +1,5 @@
 :root {
+  --font-color: #212121;
   --helper-color: #68adec;
   --receiver-color: #ffb067;
 }
@@ -9,6 +10,10 @@
 
 body {
   font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+.App {
+  color: var(--font-color);
 }
 
 .App .text-box, #intro {
