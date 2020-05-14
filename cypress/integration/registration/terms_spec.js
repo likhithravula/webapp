@@ -4,8 +4,7 @@ const { START_URL } = require( '../../support/config' )
 
 describe('registration / terms of service', () => {
 
-  beforeEach(() =>
-  {
+  beforeEach(() => {
     cy.visit( START_URL )
 
     cy.get( 'button' ).contains( 'Start creating your account' )

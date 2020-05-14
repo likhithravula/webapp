@@ -23,7 +23,7 @@ class RegistrationInformation extends React.Component {
   render() {
     const {
       firstName, lastName, phone, email, addressStreet,
-      addressPostalCode, addressCity, password
+      addressPostalCode, addressCity
     } = this.props.registration.user;
 
     return (
@@ -83,18 +83,13 @@ class RegistrationInformation extends React.Component {
                 value={ addressCity }
               />
             </Form.Group>
-            <Form.Group>
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" size="lg" name="password"
-                onChange={ this._onChange }
-                value={ password }
-              />
-            </Form.Group>
           </Form>
 
           <div className="mt-4">
             <Link to="/registration/skills">
-              <Button className="btn btn-block helper-btn">
+              <Button className="btn btn-block helper-btn"
+                disabled={ true }
+              >
                 Next - Fill out your skills
               </Button>
             </Link>

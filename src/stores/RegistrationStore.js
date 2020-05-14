@@ -10,8 +10,7 @@ class RegistrationStore {
     email: '',
     addressStreet: '',
     addressPostalCode: '',
-    addressCity: '',
-    password: '',
+    addressCity: ''
   };
 }
 
