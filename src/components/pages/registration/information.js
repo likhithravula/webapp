@@ -48,7 +48,7 @@ class RegistrationInformation extends React.Component {
             </Form.Group>
           </Form>
 
-          <div>
+          <div className="mt-4">
             <Link to="/registration/skills">
               <Button className="btn btn-block helper-btn">
                 Next - Fill out your skills

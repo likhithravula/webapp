@@ -18,7 +18,7 @@ class RegistrationFinish extends React.Component {
             </p>
           </div>
 
-          <div>
+          <div className="mt-4">
             <Link to="/request/helpType">
               <Button className="btn btn-block helper-btn">
                 Start your first request
