@@ -14,10 +14,18 @@ class RegistrationInformation extends React.Component {
     }
 
     _onChange(event) {
-      console.log( JSON.stringify( event.target.name ) )
+      const { user } = this.props.registration;
+      const { name, value } = event.target;
+
+      user[name] = value;
     }
 
   render() {
+    const {
+      firstName, lastName, phone, email, addressStreet,
+      addressPostalCode, addressCity, password
+    } = this.props.registration.user;
+
     return (
       <div className="wrapper">
         <section id="registration_information">
@@ -30,35 +38,57 @@ class RegistrationInformation extends React.Component {
               <Form.Label>First name</Form.Label>
               <Form.Control type="text" size="lg" name="firstName"
                 onChange={ this._onChange }
+                value={ firstName }
               />
             </Form.Group>
             <Form.Group>
               <Form.Label>Last name</Form.Label>
-              <Form.Control type="text" size="lg" name="lastName"/>
+              <Form.Control type="text" size="lg" name="lastName"
+                onChange={ this._onChange }
+                value={ lastName }
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>Phone number</Form.Label>
-              <Form.Control type="text" size="lg" name="phone"/>
+              <Form.Control type="text" size="lg" name="phone"
+                onChange={ this._onChange }
+                value={ phone }
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" size="lg" name="email"/>
+              <Form.Control type="email" size="lg" name="email"
+                onChange={ this._onChange }
+                value={ email }
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>Address</Form.Label>
-              <Form.Control type="text" size="lg" name="addressStreet"/>
+              <Form.Control type="text" size="lg" name="addressStreet"
+                onChange={ this._onChange }
+                value={ addressStreet }
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>ZIP Code</Form.Label>
-              <Form.Control type="text" size="lg" name="addressPostalCode"/>
+              <Form.Control type="text" size="lg" name="addressPostalCode"
+                onChange={ this._onChange }
+                value={ addressPostalCode }
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>City</Form.Label>
-              <Form.Control type="text" size="lg" name="addressCity"/>
+              <Form.Control type="text" size="lg" name="addressCity"
+                onChange={ this._onChange }
+                value={ addressCity }
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" size="lg" name="password"/>
+              <Form.Control type="password" size="lg" name="password"
+                onChange={ this._onChange }
+                value={ password }
+              />
             </Form.Group>
           </Form>
 
