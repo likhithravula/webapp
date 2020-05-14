@@ -1,17 +1,23 @@
 import { decorate, observable } from 'mobx'
 
 class RegistrationStore {
-  termsOfServiceAccepted = false;
+  termsOfServiceAccepted = false
+  user = {}
 
-  user = {
-    firstName: '',
-    lastName: '',
-    phone: '',
-    email: '',
-    addressStreet: '',
-    addressPostalCode: '',
-    addressCity: ''
-  };
+  constructor()
+    { this.clear() }
+
+  clear() {
+    this.user = {
+      firstName: '',
+      lastName: '',
+      phone: '',
+      email: '',
+      addressStreet: '',
+      addressPostalCode: '',
+      addressCity: ''
+    }
+  }
 }
 
 decorate( RegistrationStore, {
