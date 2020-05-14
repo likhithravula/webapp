@@ -46,11 +46,6 @@ class RegistrationInformation extends React.Component {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" name="password"/>
             </Form.Group>
-            <Form.Group>
-              <Form.Check type="checkbox" name="termsOfService"
-                label="By creating a ______ account you agree to our Terms Of Service"
-              />
-            </Form.Group>
           </Form>
 
           <div>
