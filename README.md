@@ -14,8 +14,20 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Run tests in non-interactive mode. Another terminal, or a background process,
-should be left running with npm start, so tests can run against it.
+Run all tests in non-interactive mode.
+Another terminal, or a background process, should be left running with npm start,
+so tests can run against it.
+
+### `npm run test-unit`
+
+Run unit tests in interactive mode. Unit tests do not require npm start to be
+running.
+
+### `npx cypress open`
+
+Open cypress tool to run integration tests in interactive mode.
+Another terminal, or a background process, should be left running with npm start,
+so tests can run against it.
 
 ### `npm run build`
 
