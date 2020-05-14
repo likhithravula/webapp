@@ -1,3 +1,4 @@
+import { inject, observer } from "mobx-react"
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -5,6 +6,17 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 class RegistrationInformation extends React.Component {
+
+    constructor( props ) {
+      super( props )
+
+      this._onChange = this._onChange.bind( this )
+    }
+
+    _onChange(event) {
+      console.log( JSON.stringify( event.target.name ) )
+    }
+
   render() {
     return (
       <div className="wrapper">
@@ -16,7 +28,9 @@ class RegistrationInformation extends React.Component {
           <Form>
             <Form.Group>
               <Form.Label>First name</Form.Label>
-              <Form.Control type="text" size="lg" name="firstName"/>
+              <Form.Control type="text" size="lg" name="firstName"
+                onChange={ this._onChange }
+              />
             </Form.Group>
             <Form.Group>
               <Form.Label>Last name</Form.Label>
@@ -61,4 +75,4 @@ class RegistrationInformation extends React.Component {
   }
 }
 
-export default RegistrationInformation;
+export default inject('registration')( observer(RegistrationInformation) );
