@@ -15,7 +15,8 @@ class RegistrationStore {
       email: '',
       addressStreet: '',
       addressPostalCode: '',
-      addressCity: ''
+      addressCity: '',
+      role: '',
     }
   }
 }

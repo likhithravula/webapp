@@ -7,18 +7,18 @@ import Form from "react-bootstrap/Form";
 
 class RegistrationInformation extends React.Component {
 
-    constructor( props ) {
-      super( props )
+  constructor( props ) {
+    super( props )
 
-      this._onChange = this._onChange.bind( this )
-    }
+    this._onChange = this._onChange.bind( this )
+  }
 
-    _onChange(event) {
-      const { user } = this.props.registration;
-      const { name, value } = event.target;
+  _onChange(event) {
+    const { user } = this.props.registration;
+    const { name, value } = event.target;
 
-      user[name] = value;
-    }
+    user[name] = value;
+  }
 
   render() {
     const {

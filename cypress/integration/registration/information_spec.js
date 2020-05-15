@@ -16,6 +16,8 @@ describe('registration / information', () => {
     .click()
 
     cy.get( 'h3' ).should( 'contain', 'Choose the alternative' )
+    cy.get( 'input[value="inneed"]' ).click()
+
     cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' )
     .click()
 
