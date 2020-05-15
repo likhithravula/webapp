@@ -4,8 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Navigation from "./components/navigation";
 import Home from "./components/pages/home";
-import EnterHelper from "./components/pages/enter-helper";
-import EnterReceiver from "./components/pages/enter-receiver";
+import Welcome from "./components/pages/welcome";
 
 import RegistrationTerms from "./components/pages/registration/terms";
 import RegistrationAlternatives from "./components/pages/registration/alternatives";
@@ -39,8 +38,7 @@ function App() {
         <BrowserRouter>
           <Navigation />
           <Switch>
-            <Route path="/enter/helper" component={EnterHelper} />
-            <Route path="/enter/receiver" component={EnterReceiver} />
+            <Route path="/welcome" component={Welcome} />
             <Route path="/registration/terms" component={RegistrationTerms} />
             <Route path="/registration/alternatives" component={RegistrationAlternatives} />
             <Route path="/registration/signin" component={RegistrationSignin} />

@@ -40,8 +40,7 @@ class RegistrationTerms extends React.Component {
           </Form>
 
           <div className="mt-4">
-            {/* alternatives page is skipped for current sprint */}
-            <Link to="/registration/signin">
+            <Link to="/registration/alternatives">
               <Button className="btn btn-block helper-btn"
                 disabled={ !registration.termsOfServiceAccepted }
               >
