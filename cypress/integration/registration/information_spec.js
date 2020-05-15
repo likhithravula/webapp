@@ -15,6 +15,10 @@ describe('registration / information', () => {
     cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' )
     .click()
 
+    cy.get( 'h3' ).should( 'contain', 'Choose the alternative' )
+    cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' )
+    .click()
+
     cy.get( 'h3' ).should( 'contain', 'Create an account' )
     cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' )
     .click()
