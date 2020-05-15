@@ -22,10 +22,10 @@ class Home extends React.Component {
               whether you want to help or be helped
             </p>
             <div className="claim-actions">
-              <Link to="/enter/helper">
+              <Link to="/welcome">
                 <Button className="helper-btn">I want to help others</Button>
               </Link>
-              <Link to="/enter/receiver">
+              <Link to="/welcome">
                 <Button className="receiver-btn">I need help</Button>
               </Link>
             </div>

@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/img/logo.png";
-import handsColorHelper from "../../assets/img/hands_blue.svg";
+import handsColorReceiver from "../../assets/img/hands_orange.svg";
 
 import Button from "react-bootstrap/Button";
 
-class EnterReceiver extends React.Component {
+class Welcome extends React.Component {
   render() {
     return (
       <div className="wrapper">
         <section id="intro">
           <div>
-            <img src={handsColorHelper} className="hands" alt="hands" />
+            <img src={handsColorReceiver} className="hands" alt="hands" />
           </div>
           <div>
             <img src={logo} className="logo" alt="logo" />
@@ -22,9 +22,11 @@ class EnterReceiver extends React.Component {
           </div>
 
           <div>
-            <Button className="btn receiver-btn">
-              Create an account using BankID
-            </Button>
+            <Link to="/registration/terms">
+              <Button className="btn btn-block helper-btn">
+                Start creating your account
+              </Button>
+            </Link>
           </div>
 
           <Link to="">Already have an account? Click here to sign in</Link>
@@ -34,4 +36,4 @@ class EnterReceiver extends React.Component {
   }
 }
 
-export default EnterReceiver;
+export default Welcome;
