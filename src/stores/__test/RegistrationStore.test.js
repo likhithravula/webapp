@@ -1,16 +1,5 @@
 import RegistrationStore from '../RegistrationStore'
 
-const EMPTY_USER = {
-  firstName: '',
-  lastName: '',
-  phone: '',
-  email: '',
-  addressStreet: '',
-  addressPostalCode: '',
-  addressCity: '',
-  role: ''
-}
-
 describe( 'RegistrationStore', () => {
 
   let store
@@ -21,7 +10,7 @@ describe( 'RegistrationStore', () => {
 
   it( 'should create an empty registration store', () => {
     expect( store.termsOfServiceAccepted ).toBe( false )
-    expect( store.user ).toEqual( EMPTY_USER )
+    expect( store.user ).toEqual( RegistrationStore.emptyUserData() )
   })
 
   it( 'should clear the user data', () => {
@@ -29,12 +18,12 @@ describe( 'RegistrationStore', () => {
     store.user.lastName = 'x'
     store.user.phone = 'x'
     store.user.email = 'x'
-    store.user.addressStreet = 'x'
-    store.user.addressPostalCode = 'x'
-    store.user.addressCity = 'x'
+    store.user.address.street = 'x'
+    store.user.address.postalCode = 'x'
+    store.user.address.city = 'x'
 
     store.clearUser()
 
-    expect( store.user ).toEqual( EMPTY_USER )
+    expect( store.user ).toEqual( RegistrationStore.emptyUserData() )
   })
 })

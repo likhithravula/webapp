@@ -17,14 +17,17 @@ class RegistrationInformation extends React.Component {
     const { user } = this.props.registration;
     const { name, value } = event.target;
 
-    user[name] = value;
+    if( [ 'street', 'postalCode', 'city' ].includes(name) )
+      user.address[name] = value;
+    else
+      user[name] = value;
   }
 
   render() {
     const {
-      firstName, lastName, phone, email, addressStreet,
-      addressPostalCode, addressCity
+      firstName, lastName, phone, email, address
     } = this.props.registration.user;
+    const { street, postalCode, city } = address
 
     return (
       <div className="wrapper">
@@ -64,23 +67,23 @@ class RegistrationInformation extends React.Component {
             </Form.Group>
             <Form.Group>
               <Form.Label>Address</Form.Label>
-              <Form.Control type="text" size="lg" name="addressStreet"
+              <Form.Control type="text" size="lg" name="street"
                 onChange={ this._onChange }
-                value={ addressStreet }
+                value={ street }
               />
             </Form.Group>
             <Form.Group>
               <Form.Label>ZIP Code</Form.Label>
-              <Form.Control type="text" size="lg" name="addressPostalCode"
+              <Form.Control type="text" size="lg" name="postalCode"
                 onChange={ this._onChange }
-                value={ addressPostalCode }
+                value={ postalCode }
               />
             </Form.Group>
             <Form.Group>
               <Form.Label>City</Form.Label>
-              <Form.Control type="text" size="lg" name="addressCity"
+              <Form.Control type="text" size="lg" name="city"
                 onChange={ this._onChange }
-                value={ addressCity }
+                value={ city }
               />
             </Form.Group>
           </Form>
