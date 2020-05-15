@@ -33,15 +33,15 @@ class RegistrationStore {
     return JSON.parse( JSON.stringify(EMPTY_USER_DATA) )
   }
 
-  constructor()
-    { this.clearUser() }
+  constructor() {
+    this.clearUser()
+  }
 
   clearUser() {
     this.user = RegistrationStore.emptyUserData()
   }
 
-  register()
-  {
+  register() {
     return this.api.addUser( this.user )
   }
 }
