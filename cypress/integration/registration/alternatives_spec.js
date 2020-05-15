@@ -41,4 +41,15 @@ describe('registration / information', () => {
     cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' )
   })
 
+  it('should navigate to the next page', () => {
+    cy.get( 'h3' ).should( 'contain', 'Choose the alternative' )
+
+    cy.get( 'input[value="helper"]' ).click()
+
+    cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' )
+    .click()
+
+    cy.get( 'h3' ).should( 'not.contain', 'Choose the alternative' )
+  })
+
 })
