@@ -7,7 +7,8 @@ const EMPTY_USER = {
   email: '',
   addressStreet: '',
   addressPostalCode: '',
-  addressCity: ''
+  addressCity: '',
+  role: ''
 }
 
 describe( 'RegistrationStore', () => {
