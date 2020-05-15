@@ -37,7 +37,7 @@ describe('registration / information', () => {
     cy.get( 'input[name="postalCode"]' ).should( 'have.value', '' )
     cy.get( 'input[name="city"]' ).should( 'have.value', '' )
 
-    cy.get( 'button' ).contains( 'Next' ).should( 'be.disabled' )
+    cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' ) // TODO: will change
   })
 
   it('should fill data on the information page', () => {
@@ -59,7 +59,7 @@ describe('registration / information', () => {
     cy.get( 'input[name="postalCode"]' ).should( 'have.value', '12345' )
     cy.get( 'input[name="city"]' ).should( 'have.value', 'Stockholm' )
 
-    cy.get( 'button' ).contains( 'Next' ).should( 'be.disabled' )
+    cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' )
   })
 
 })
