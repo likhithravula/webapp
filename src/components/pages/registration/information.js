@@ -1,6 +1,5 @@
 import { inject, observer } from "mobx-react"
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -21,6 +20,22 @@ class RegistrationInformation extends React.Component {
       user.address[name] = value;
     else
       user[name] = value;
+  }
+
+  async _registerUser()
+  {
+    const { registration } = this.props
+
+    try {
+      await registration.register()
+
+      console.log( 'registered' )
+    }
+    catch( error ) {
+      // TODO: show error to user
+      console.log( 'not registered' )
+      console.error( error )
+    }
   }
 
   render() {
@@ -89,13 +104,12 @@ class RegistrationInformation extends React.Component {
           </Form>
 
           <div className="mt-4">
-            <Link to="/registration/skills">
-              <Button className="btn btn-block helper-btn"
-                disabled={ true }
-              >
-                Next - Fill out your skills
-              </Button>
-            </Link>
+            <Button className="btn btn-block helper-btn"
+              disabled={ false /* TODO: enable only when information is complete */ }
+              onClick={ () => this._registerUser() }
+            >
+              Next - Fill out your skills
+            </Button>
           </div>
         </section>
       </div>

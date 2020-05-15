@@ -1,5 +1,7 @@
 import { decorate, observable } from 'mobx'
 
+import ApiService from '../services/api'
+
 const EMPTY_USER_DATA = {
   firstName: '',
   lastName: '',
@@ -22,6 +24,8 @@ const EMPTY_USER_DATA = {
 }
 
 class RegistrationStore {
+  api = new ApiService()
+
   termsOfServiceAccepted = false
   user = {}
 
@@ -29,11 +33,16 @@ class RegistrationStore {
     return JSON.parse( JSON.stringify(EMPTY_USER_DATA) )
   }
 
-  constructor()
-    { this.clearUser() }
+  constructor() {
+    this.clearUser()
+  }
 
   clearUser() {
     this.user = RegistrationStore.emptyUserData()
+  }
+
+  register() {
+    return this.api.addUser( this.user )
   }
 }
 
