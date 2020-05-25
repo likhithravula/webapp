@@ -11,7 +11,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false && cypress run",
+    "run-integration-tests": "cypress run",
+    "test": "react-scripts test --watchAll=false && start-server-and-test start http://localhost:3000 run-integration-tests",
     "test-unit": "react-scripts test",
     "eject": "react-scripts eject"
   },
