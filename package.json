@@ -30,7 +30,8 @@
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
-    "cypress": "^4.5.0"
+    "cypress": "^4.5.0",
+    "start-server-and-test": "^1.11.0"
   },
   "eslintConfig": {
     "extends": "react-app"
