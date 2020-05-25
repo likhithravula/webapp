@@ -11,7 +11,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false && cypress run",
+    "run-integration-tests": "cypress run",
+    "test": "react-scripts test --watchAll=false && start-server-and-test start http://localhost:3000 run-integration-tests",
     "test-unit": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -30,7 +31,8 @@
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
-    "cypress": "^4.5.0"
+    "cypress": "^4.5.0",
+    "start-server-and-test": "^1.11.0"
   },
   "eslintConfig": {
     "extends": "react-app"
