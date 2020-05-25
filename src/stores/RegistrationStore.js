@@ -53,7 +53,7 @@ class RegistrationStore {
       response = await this.api.addUser( this.user )
 
       if( !response.token )
-        this.message = response.message || 'An error occurred' // TODO: show missing fields
+        this.message = response.message || 'An error occurred.'
     } catch (error) {
       console.error(error)
 
