@@ -34,9 +34,6 @@ class RegistrationInformation extends React.Component {
 
       this.props.history.push( '/registration/finish' )
     }
-    else {
-      console.log( 'not registered' ) // TODO: show message
-    }
   }
 
   render() {
