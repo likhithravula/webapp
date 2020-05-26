@@ -25,15 +25,17 @@ class RegistrationInformation extends React.Component {
 
   async _registerUser()
   {
-    const { registration } = this.props
+    const { registration, user } = this.props
 
-    const user = await registration.register()
+    const response = await registration.register()
 
-    if( user.token ) {
+    if( response.token ) {
+      user.data = response
+
       this.props.history.push( '/registration/finish' )
     }
     else {
-      console.log( 'not registered' )
+      console.log( 'not registered' ) // TODO: show message
     }
   }
 
@@ -125,5 +127,5 @@ class RegistrationInformation extends React.Component {
 }
 
 export default withRouter(
-  inject('registration')( observer(RegistrationInformation) )
+  inject('registration', 'user')( observer(RegistrationInformation) )
 );

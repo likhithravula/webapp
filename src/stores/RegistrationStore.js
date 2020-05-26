@@ -52,10 +52,10 @@ class RegistrationStore {
     try {
       response = await this.api.addUser( this.user )
 
-      if( !response.token )
-        this.message = response.message || 'An error occurred.'
+      this.message = response.token ? '' :
+        response.message || 'An error occurred.'
     } catch (error) {
-      console.error(error)
+      response = { error }
 
       this.message = 'Request failed. Please try again later.'
     }
