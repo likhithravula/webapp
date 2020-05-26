@@ -49,7 +49,7 @@ describe( 'RegistrationStore', () => {
   it( 'should catch message if there is any', async () => {
     ApiService.mockImplementation(() => (
     {
-      addUser: () => ({ message: 'error occurred' })
+      addUser: () => ({ msg: 'error occurred' })
     }))
 
     store = new RegistrationStore()
@@ -59,7 +59,7 @@ describe( 'RegistrationStore', () => {
 
     const result = await store.register()
 
-    expect( result ).toEqual({ message: 'error occurred' })
+    expect( result ).toEqual({ msg: 'error occurred' })
     expect( store.message ).toEqual( 'error occurred' )
   })
 

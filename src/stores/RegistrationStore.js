@@ -53,7 +53,7 @@ class RegistrationStore {
       response = await this.api.addUser( this.user )
 
       this.message = response.token ? '' :
-        response.message || 'An error occurred.'
+        response.msg || 'An error occurred.'
     } catch (error) {
       response = { error }
 
