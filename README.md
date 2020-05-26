@@ -15,8 +15,8 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Run all tests in non-interactive mode. A server is started as part of the
-integration tests, so the development server should not be running when this
-is invoked.
+integration tests, so it's not required that the development server is running
+when this is invoked.
 
 ### `npm run test-unit`
 
