@@ -26,6 +26,7 @@ const EMPTY_USER_DATA = {
 class RegistrationStore {
   api = new ApiService()
 
+  message = ''
   termsOfServiceAccepted = false
   user = {}
 
@@ -37,16 +38,34 @@ class RegistrationStore {
     this.clearUser()
   }
 
+  clearMessage() {
+    this.message = ''
+  }
+
   clearUser() {
     this.user = RegistrationStore.emptyUserData()
   }
 
-  register() {
-    return this.api.addUser( this.user )
+  async register() {
+    let response = {}
+
+    try {
+      response = await this.api.addUser( this.user )
+
+      this.message = response.token ? '' :
+        response.msg || 'An error occurred.'
+    } catch (error) {
+      response = { error }
+
+      this.message = 'Request failed. Please try again later.'
+    }
+
+    return response
   }
 }
 
 decorate( RegistrationStore, {
+  message: observable,
   termsOfServiceAccepted: observable,
   user: observable
 })

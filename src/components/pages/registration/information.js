@@ -1,5 +1,6 @@
 import { inject, observer } from "mobx-react"
 import React from "react";
+import { withRouter } from 'react-router';
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -24,24 +25,23 @@ class RegistrationInformation extends React.Component {
 
   async _registerUser()
   {
-    const { registration } = this.props
+    const { registration, user } = this.props
 
-    try {
-      await registration.register()
+    const response = await registration.register()
 
-      console.log( 'registered' )
-    }
-    catch( error ) {
-      // TODO: show error to user
-      console.log( 'not registered' )
-      console.error( error )
+    if( response.token ) {
+      user.data = response
+
+      this.props.history.push( '/registration/finish' )
     }
   }
 
   render() {
+    const { registration } = this.props;
+    const { message, user } = registration;
     const {
       firstName, lastName, phone, email, address
-    } = this.props.registration.user;
+    } = user;
     const { street, postalCode, city } = address
 
     return (
@@ -49,6 +49,12 @@ class RegistrationInformation extends React.Component {
         <section id="registration_information">
           <div className="text-box">
             <h3>Fill in your information</h3>
+          </div>
+
+          <div className={ `alert alert-danger ${ message ? '' : 'd-none' }` }
+            onClick={ () => registration.clearMessage() }
+          >
+            { message }
           </div>
 
           <Form>
@@ -117,4 +123,6 @@ class RegistrationInformation extends React.Component {
   }
 }
 
-export default inject('registration')( observer(RegistrationInformation) );
+export default withRouter(
+  inject('registration', 'user')( observer(RegistrationInformation) )
+);
