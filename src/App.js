@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Navigation from "./components/navigation";
 import Home from "./components/pages/home";
+import Signin from "./components/pages/signin";
 import Welcome from "./components/pages/welcome";
 
 import RegistrationTerms from "./components/pages/registration/terms";
@@ -41,6 +42,7 @@ function App() {
           <Navigation />
           <Switch>
             <Route path="/welcome" component={Welcome} />
+            <Route path="/signin" component={Signin} />
             <Route path="/registration/terms" component={RegistrationTerms} />
             <Route path="/registration/alternatives" component={RegistrationAlternatives} />
             <Route path="/registration/signin" component={RegistrationSignin} />

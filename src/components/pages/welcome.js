@@ -29,7 +29,9 @@ class Welcome extends React.Component {
             </Link>
           </div>
 
-          <Link to="">Already have an account? Click here to sign in</Link>
+          <Link to="/signin">
+            Already have an account? Click here to sign in
+          </Link>
         </section>
       </div>
     );

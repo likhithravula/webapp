@@ -25,4 +25,8 @@ export default class ApiService
   addUser( user ) {
     return this._post( 'user', user )
   }
+
+  authenticateUser( user ) {
+    return this._post( 'user/auth', user )
+  }
 }
