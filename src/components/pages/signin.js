@@ -11,7 +11,7 @@ class Signin extends React.Component {
   async _loginUser() {
     const { user } = this.props
 
-    // TODO: get this from auth service
+    // TODO: replace this with auth service, once it's ready
     user.data = {
       email: 'xyz@gmail.com',
       password: 'xyzxyz'
