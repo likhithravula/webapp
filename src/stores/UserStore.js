@@ -8,11 +8,15 @@ class UserStore {
   data = {}
   message = ''
 
+  clearMessage() {
+    this.message = ''
+  }
+
   async login() {
     let response = {}
 
     try {
-      response = await this.api.login( this.data )
+      response = await this.api.authenticateUser( this.data )
 
       this.message = response.token ? '' :
         response.msg || 'An error occurred.'

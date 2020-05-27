@@ -15,17 +15,17 @@ const fillValidValues = () => {
 
 describe('registration / information', () => {
 
-  let userCallDeferred
+  let callDeferred
 
   beforeEach(() => {
-    userCallDeferred = deferred()
+    callDeferred = deferred()
 
     cy.visit( START_URL, {
       onBeforeLoad: window => {
         cy.stub( window, 'fetch' )
         .withArgs( Cypress.sinon.match(/user/) )
         .as( 'userCall' )
-        .returns( userCallDeferred.promise )
+        .returns( callDeferred.promise )
       }
     })
 
@@ -80,7 +80,7 @@ describe('registration / information', () => {
 
   describe('registration / information / invoke', () => {
     it('should register user', () => {
-      userCallDeferred.resolve({
+      callDeferred.resolve({
         json: () => ({ token: 'ABCD' }),
         ok: true,
       })
@@ -98,7 +98,7 @@ describe('registration / information', () => {
     })
 
     it('should display error message', () => {
-      userCallDeferred.resolve({
+      callDeferred.resolve({
         json: () => ({ msg: 'Could not create user' }),
         ok: true,
       })
@@ -118,7 +118,7 @@ describe('registration / information', () => {
     })
 
     it('should clear error message', () => {
-      userCallDeferred.resolve({
+      callDeferred.resolve({
         json: () => ({ msg: 'Could not create user' }),
         ok: true,
       })
