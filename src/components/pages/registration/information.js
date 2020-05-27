@@ -114,7 +114,7 @@ class RegistrationInformation extends React.Component {
               disabled={ false /* TODO: enable only when information is complete */ }
               onClick={ () => this._registerUser() }
             >
-              Next - Fill out your skills
+              Next - Finish registration
             </Button>
           </div>
         </section>
