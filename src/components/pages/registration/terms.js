@@ -43,7 +43,7 @@ class RegistrationTerms extends React.Component {
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. <a href="#">Read More ></a>
+            aliqua. <a href="#more">Read More ></a>
           </p>
 
           <Form>
