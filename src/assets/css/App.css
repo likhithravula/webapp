@@ -2,6 +2,7 @@
   --font-color: #212121;
   --helper-color: #68adec;
   --receiver-color: #ffb067;
+  --link-color: #f7af69;
 }
 
 * {
@@ -18,6 +19,11 @@ body {
 
 .App .text-box, #intro {
   text-align: center;
+}
+
+p a {
+  color: var(--link-color);
+  font-weight: 600;
 }
 
 a:hover {

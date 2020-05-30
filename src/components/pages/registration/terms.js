@@ -26,13 +26,30 @@ class RegistrationTerms extends React.Component {
       <div className="wrapper">
         <section id="registration_terms">
           <div className="text-box">
-            <h3>Terms of service</h3>
+            <h3>Terms and conditions</h3>
           </div>
+
+          <h2>What will we collect?</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.
+          </p>
+
+          <h2>Do you want to know more?</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. <a href="#">Read More ></a>
+          </p>
 
           <Form>
             <Form.Group>
               <Form.Check type="checkbox" name="termsOfService"
-                label="By creating a ______ account you agree to our Terms Of Service"
+                label="I agree to the terms and conditions"
                 checked={ registration.termsOfServiceAccepted }
                 onClick={ this.changeTermsOfServiceFlag }
               />

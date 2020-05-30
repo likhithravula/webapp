@@ -10,7 +10,7 @@ describe('registration / information', () => {
     cy.get( 'button' ).contains( 'Start creating your account' )
     .click()
 
-    cy.get( 'h3' ).should( 'contain', 'Terms of service' )
+    cy.get( 'h3' ).should( 'contain', 'Terms and conditions' )
     cy.get( 'input[name="termsOfService"]' ).click()
     cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' )
     .click()

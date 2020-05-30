@@ -12,7 +12,7 @@ describe('registration / terms of service', () => {
   })
 
   it('should display the terms of service page', () => {
-    cy.get( 'h3' ).should( 'contain', 'Terms of service' )
+    cy.get( 'h3' ).should( 'contain', 'Terms and conditions' )
 
     cy.get( 'input[name="termsOfService"]' ).should( 'not.be.checked' )
 
@@ -20,7 +20,7 @@ describe('registration / terms of service', () => {
   })
 
   it('should accept the terms of service', () => {
-    cy.get( 'h3' ).should( 'contain', 'Terms of service' )
+    cy.get( 'h3' ).should( 'contain', 'Terms and conditions' )
 
     cy.get( 'input[name="termsOfService"]' ).click()
 
@@ -28,7 +28,7 @@ describe('registration / terms of service', () => {
   })
 
   it('should disable again the navigation if terms of service are clicked again', () => {
-    cy.get( 'h3' ).should( 'contain', 'Terms of service' )
+    cy.get( 'h3' ).should( 'contain', 'Terms and conditions' )
 
     cy.get( 'input[name="termsOfService"]' ).click()
 
@@ -40,13 +40,13 @@ describe('registration / terms of service', () => {
   })
 
   it('should navigate to the next page', () => {
-    cy.get( 'h3' ).should( 'contain', 'Terms of service' )
+    cy.get( 'h3' ).should( 'contain', 'Terms and conditions' )
 
     cy.get( 'input[name="termsOfService"]' ).click()
 
     cy.get( 'button' ).contains( 'Next' ).should( 'be.enabled' ).click()
 
-    cy.get( 'h3' ).contains( 'Terms of service' )
+    cy.get( 'h3' ).contains( 'Terms and conditions' )
     .should( 'not.be.visible' )
   })
 
