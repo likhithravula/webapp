@@ -9,6 +9,10 @@ class UserStore {
   data = {}
   message = ''
 
+  isLoggedIn() {
+    return Boolean( this.token )
+  }
+
   clearMessage() {
     this.message = ''
   }
@@ -79,6 +83,7 @@ class UserStore {
 
 decorate( UserStore, {
   data: observable,
+  isLoggedIn: observable,
   message: observable
 })
 
