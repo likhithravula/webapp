@@ -50,11 +50,11 @@ export default class ApiService
   }
 
   authenticateUser( user ) {
-    return this._post( 'user/auth', user )
+    return this._post( `user/auth`, user )
   }
 
-  updateUser( user, token ) {
-    return this._put( 'user/auth', user, token )
+  updateUser( { id, ...user }, token ) {
+    return this._put( `user/${ id }`, user, token )
   }
 
 }
