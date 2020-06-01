@@ -74,4 +74,63 @@ describe( 'UserStore', () => {
     })
   })
 
+  describe( 'update', () => {
+    beforeEach(() => {
+      ApiService.mockImplementation(() => (
+      {
+        updateUser: data => ({ ...data })
+      }))
+
+      store = new UserStore()
+    })
+
+    it( 'should update user', async () => {
+      store.token = 'ABC'
+      store.data = { email: 'juan@mail.com', password: 'secret' }
+
+      const result = await store.update()
+
+      expect( result ).toEqual({ success: true })
+
+      expect( store.message ).toEqual( '' )
+      expect( store.data ).toEqual(
+        { email: 'juan@mail.com', password: 'secret' }
+      )
+    })
+
+    it( 'should catch message if there is any', async () => {
+      ApiService.mockImplementation(() => (
+      {
+        updateUser: () => ({ msg: 'error occurred' })
+      }))
+
+      store = new UserStore()
+
+      store.token = 'ABC'
+      store.data = { email: 'juan@mail.com', password: 'secret' }
+
+      const result = await store.update()
+
+      expect( result ).toEqual({ success: false, msg: 'error occurred' })
+      expect( store.message ).toEqual( 'error occurred' )
+    })
+
+    it( 'should fail gracefully if the API call throws an error', async () => {
+      ApiService.mockImplementation(() => (
+      {
+        updateUser: () => { throw Error( 'Network crashed' ) }
+      }))
+
+      store = new UserStore()
+
+      store.token = 'ABC'
+      store.data = { email: 'juan@mail.com', password: 'secret' }
+
+      const result = await store.update()
+
+      expect( result.error.message ).toEqual( 'Network crashed' )
+      expect( store.message ).toEqual( 'Request failed. Please try again later.' )
+    })
+  })
+
 })

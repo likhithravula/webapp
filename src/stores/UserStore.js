@@ -36,6 +36,31 @@ class UserStore {
 
     return response
   }
+
+  async update() {
+    if( !this.token )
+      throw new Error( 'Invalid state. User not authenticated.' )
+
+    try {
+      const response = await this.api.updateUser( this.data, this.token )
+
+      if( response.email ) { // updated user data was returned
+        this.message = ''
+        this.data = { ...response }
+
+        return { success: true }
+      }
+      else {
+        this.message = response.msg || 'An error occurred.'
+
+        return { success: false, ...response }
+      }
+    } catch (error) {
+      this.message = 'Request failed. Please try again later.'
+
+      return { success: false, error }
+    }
+  }
 }
 
 decorate( UserStore, {
