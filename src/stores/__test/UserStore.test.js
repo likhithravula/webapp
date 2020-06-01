@@ -9,13 +9,6 @@ describe( 'UserStore', () => {
   let store
 
   beforeEach(() => {
-    ApiService.mockImplementation(() => (
-    {
-      authenticateUser: data => (
-        { token: 'ABC', ...data }
-      )
-    }))
-
     store = new UserStore()
   })
 
@@ -24,47 +17,61 @@ describe( 'UserStore', () => {
     expect( store.data ).toEqual({})
   })
 
-  it( 'should login user', async () => {
-    store.data = { email: 'juan@mail.com', password: 'secret' }
+  describe( 'login', () => {
+    beforeEach(() => {
+      ApiService.mockImplementation(() => (
+      {
+        authenticateUser: data => (
+          { token: 'ABC', ...data }
+        )
+      }))
 
-    const result = await store.login()
+      store = new UserStore()
+    })
 
-    expect( result ).toEqual(
-      { token: 'ABC', email: 'juan@mail.com', password: 'secret' }
-    )
+    it( 'should login user', async () => {
+      store.data = { email: 'juan@mail.com', password: 'secret' }
 
-    expect( store.message ).toEqual( '' )
-    expect( store.token ).toEqual( 'ABC' )
-    expect( store.data ).toEqual(
-      { email: 'juan@mail.com', password: 'secret' }
-    )
+      const result = await store.login()
+
+      expect( result ).toEqual(
+        { token: 'ABC', email: 'juan@mail.com', password: 'secret' }
+      )
+
+      expect( store.message ).toEqual( '' )
+      expect( store.token ).toEqual( 'ABC' )
+      expect( store.data ).toEqual(
+        { email: 'juan@mail.com', password: 'secret' }
+      )
+    })
+
+    it( 'should catch message if there is any', async () => {
+      ApiService.mockImplementation(() => (
+      {
+        authenticateUser: () => ({ msg: 'error occurred' })
+      }))
+
+      store = new UserStore()
+
+      const result = await store.login()
+
+      expect( result ).toEqual({ msg: 'error occurred' })
+      expect( store.message ).toEqual( 'error occurred' )
+    })
+
+    it( 'should fail gracefully if the API call throws an error', async () => {
+      ApiService.mockImplementation(() => (
+      {
+        authenticateUser: () => { throw Error( 'Network crashed' ) }
+      }))
+
+      store = new UserStore()
+
+      const result = await store.login()
+
+      expect( result.error.message ).toEqual( 'Network crashed' )
+      expect( store.message ).toEqual( 'Request failed. Please try again later.' )
+    })
   })
 
-  it( 'should catch message if there is any', async () => {
-    ApiService.mockImplementation(() => (
-    {
-      authenticateUser: () => ({ msg: 'error occurred' })
-    }))
-
-    store = new UserStore()
-
-    const result = await store.login()
-
-    expect( result ).toEqual({ msg: 'error occurred' })
-    expect( store.message ).toEqual( 'error occurred' )
-  })
-
-  it( 'should fail gracefully if the API call throws an error', async () => {
-    ApiService.mockImplementation(() => (
-    {
-      authenticateUser: () => { throw Error( 'Network crashed' ) }
-    }))
-
-    store = new UserStore()
-
-    const result = await store.login()
-
-    expect( result.error.message ).toEqual( 'Network crashed' )
-    expect( store.message ).toEqual( 'Request failed. Please try again later.' )
-  })
 })
