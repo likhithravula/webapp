@@ -7,13 +7,17 @@ const DEFAULT_HEADERS = {
 
 export default class ApiService
 {
-  async _post( operation, payload ) {
+  async _invoke( method, operation, payload, token ) {
     const endpoint = `${ apiServer }/${ operation }`
-    const options = {
-      method: 'POST',
-      headers: DEFAULT_HEADERS,
-      body: JSON.stringify( payload )
-    }
+    const headers = { ...DEFAULT_HEADERS }
+
+    if( token )
+      headers[ 'X-Auth-Token' ] = token
+
+    const options = { method, headers }
+
+    if( payload )
+      options.body = JSON.stringify( payload )
 
     const response = await fetch( endpoint, options )
 
@@ -22,6 +26,25 @@ export default class ApiService
     return response.json()
   }
 
+  _get( operation, payload, token ) {
+    return this._invoke( 'GET', operation, payload, token )
+  }
+
+  _post( operation, payload, token ) {
+    return this._invoke( 'POST', operation, payload, token )
+  }
+
+  _put( operation, payload, token ) {
+    return this._invoke( 'PUT', operation, payload, token )
+  }
+
+  _delete( operation, payload, token ) {
+    return this._invoke( 'DELETE', operation, payload, token )
+  }
+
+  //////////////////////////////////////////////////////////////////////////
+  // User API
+
   addUser( user ) {
     return this._post( 'user', user )
   }
@@ -29,4 +52,9 @@ export default class ApiService
   authenticateUser( user ) {
     return this._post( 'user/auth', user )
   }
+
+  updateUser( user, token ) {
+    return this._put( 'user/auth', user, token )
+  }
+
 }
