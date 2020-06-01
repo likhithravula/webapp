@@ -61,6 +61,18 @@ class UserStore {
       return { success: false, error }
     }
   }
+
+  async logout() {
+    if( !this.token )
+      throw new Error( 'Invalid state. User not authenticated.' )
+
+    try {
+      await this.api.logout( this.data.id, this.token )
+    } finally {
+      this.token = null
+      this.data = {}
+    }
+  }
 }
 
 decorate( UserStore, {
