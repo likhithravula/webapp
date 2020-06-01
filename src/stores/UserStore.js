@@ -67,7 +67,9 @@ class UserStore {
       throw new Error( 'Invalid state. User not authenticated.' )
 
     try {
-      await this.api.logout( this.data.id, this.token )
+      await this.api.logoutUser( this.data.id, this.token )
+    } catch(_) {
+      this.message = 'Request failed.'
     } finally {
       this.token = null
       this.data = {}
