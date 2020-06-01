@@ -5,6 +5,7 @@ import ApiService from '../services/api'
 class UserStore {
   api = new ApiService()
 
+  token = null
   data = {}
   message = ''
 
@@ -18,8 +19,15 @@ class UserStore {
     try {
       response = await this.api.authenticateUser( this.data )
 
-      this.message = response.token ? '' :
-        response.msg || 'An error occurred.'
+      if( response.token ) {
+        this.message = ''
+
+        const { token, ...data } = response
+        this.token = token
+        this.data = data
+      }
+      else
+        this.message = response.msg || 'An error occurred.'
     } catch (error) {
       response = { error }
 

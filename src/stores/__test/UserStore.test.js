@@ -11,7 +11,9 @@ describe( 'UserStore', () => {
   beforeEach(() => {
     ApiService.mockImplementation(() => (
     {
-      authenticateUser: () => ({ token: 'ABC' })
+      authenticateUser: data => (
+        { token: 'ABC', ...data }
+      )
     }))
 
     store = new UserStore()
@@ -23,10 +25,19 @@ describe( 'UserStore', () => {
   })
 
   it( 'should login user', async () => {
+    store.data = { email: 'juan@mail.com', password: 'secret' }
+
     const result = await store.login()
 
-    expect( result ).toEqual({ token: 'ABC' })
+    expect( result ).toEqual(
+      { token: 'ABC', email: 'juan@mail.com', password: 'secret' }
+    )
+
     expect( store.message ).toEqual( '' )
+    expect( store.token ).toEqual( 'ABC' )
+    expect( store.data ).toEqual(
+      { email: 'juan@mail.com', password: 'secret' }
+    )
   })
 
   it( 'should catch message if there is any', async () => {
