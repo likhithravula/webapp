@@ -114,7 +114,6 @@ describe('authentication', () => {
 
     it('should show menu', () => {
       cy.get( '#navigation_bar .navbar-toggler-icon' )
-      .should( 'be.visible' )
       .click()
 
       cy.get( '#navigation_bar a' ).contains( 'Leaderboard' )
@@ -135,7 +134,6 @@ describe('authentication', () => {
 
     it('should log out a volunteer', () => {
       cy.get( '#navigation_bar .navbar-toggler-icon' )
-      .should( 'be.visible' )
       .click()
 
       cy.get( '#navigation_bar a' ).contains( 'Logout' ).click()
