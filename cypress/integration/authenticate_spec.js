@@ -18,7 +18,7 @@ describe('authentication', () => {
         .as( 'authCall' )
         .returns( callDeferred.promise )
 
-        fetchStub.withArgs( Cypress.sinon.match(/user[/]12[/]logout/) )
+        fetchStub.withArgs( Cypress.sinon.match(/user[/]14[/]logout/) )
         .as( 'logoutCall' )
         .returns({})
       }
@@ -95,7 +95,7 @@ describe('authentication', () => {
   describe('Logged in', () => {
     beforeEach(() => {
       callDeferred.resolve({
-        json: () => ({ token: 'ABCD' }),
+        json: () => ({ id: 14, token: 'ABCD' }),
         ok: true,
       })
 
