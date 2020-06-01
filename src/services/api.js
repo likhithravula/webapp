@@ -50,7 +50,7 @@ export default class ApiService
   }
 
   authenticateUser( user ) {
-    return this._post( `user/auth`, user )
+    return this._post( 'user/auth', user )
   }
 
   updateUser( { id, ...user }, token ) {
