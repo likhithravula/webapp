@@ -57,4 +57,8 @@ export default class ApiService
     return this._put( `user/${ id }`, user, token )
   }
 
+  logoutUser( userId, token ) {
+    return this._post( `user/${ userId }/logout`, {}, token )
+  }
+
 }

@@ -8,12 +8,12 @@ import Form from "react-bootstrap/Form";
 class Signin extends React.Component {
 
   async _loginUser() {
-    const { user } = this.props
+    const { history, user } = this.props
 
     // TODO: replace this with auth service, once it's ready
     user.data = {
-      email: 'xyz@gmail.com',
-      password: 'xyzxyz'
+      email: 'prueba@gmail.com',
+      password: 'test'
     }
 
     const response = await user.login()
@@ -21,7 +21,7 @@ class Signin extends React.Component {
     if( response.token ) {
       user.data = response
 
-      this.props.history.push( '/helper/map' )
+      history.push( '/helper/map' )
     }
   }
 

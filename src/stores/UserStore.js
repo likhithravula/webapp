@@ -9,6 +9,10 @@ class UserStore {
   data = {}
   message = ''
 
+  isLoggedIn() {
+    return Boolean( this.token )
+  }
+
   clearMessage() {
     this.message = ''
   }
@@ -61,10 +65,25 @@ class UserStore {
       return { success: false, error }
     }
   }
+
+  async logout() {
+    if( !this.token )
+      throw new Error( 'Invalid state. User not authenticated.' )
+
+    try {
+      await this.api.logoutUser( this.data.id, this.token )
+    } catch(_) {
+      this.message = 'Request failed.'
+    } finally {
+      this.token = null
+      this.data = {}
+    }
+  }
 }
 
 decorate( UserStore, {
   data: observable,
+  isLoggedIn: observable,
   message: observable
 })
 

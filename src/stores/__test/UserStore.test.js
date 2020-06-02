@@ -133,4 +133,42 @@ describe( 'UserStore', () => {
     })
   })
 
+  describe( 'logout', () => {
+    beforeEach(() => {
+      ApiService.mockImplementation(() => (
+      {
+        logoutUser: id => ({ id })
+      }))
+
+      store = new UserStore()
+    })
+
+    it( 'should logout user', async () => {
+      store.token = 'ABC'
+      store.data = { id: 14 }
+
+      await store.logout()
+
+      expect( store.data ).toEqual({})
+      expect( store.token ).toBe( null )
+    })
+
+    it( 'should logout user even if the API call throws an error', async () => {
+      ApiService.mockImplementation(() => (
+      {
+        logoutUser: () => { throw Error( 'Network crashed' ) }
+      }))
+
+      store = new UserStore()
+
+      store.token = 'ABC'
+      store.data = { id: 14 }
+
+      const result = await store.logout()
+
+      expect( store.data ).toEqual({})
+      expect( store.token ).toBe( null )
+    })
+  })
+
 })
