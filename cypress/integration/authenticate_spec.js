@@ -125,7 +125,7 @@ describe('authentication', () => {
       cy.get( '#navigation_bar a' ).contains( 'Pending status and history' )
       .should( 'be.visible' )
 
-      cy.get( '#navigation_bar a' ).contains( 'Rate persona' )
+      cy.get( '#navigation_bar a' ).contains( 'Rate' )
       .should( 'be.visible' )
 
       cy.get( '#navigation_bar a' ).contains( 'Logout' )

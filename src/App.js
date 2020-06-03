@@ -21,6 +21,9 @@ import RequestMap from "./components/pages/request/map"
 
 import HelperMap from "./components/pages/helper/map"
 
+import RatingsPending from "./components/pages/ratings/pending"
+
+import NavigationStore from './stores/NavigationStore'
 import RegistrationStore from './stores/RegistrationStore'
 import UserStore from './stores/UserStore'
 
@@ -30,6 +33,7 @@ import "./assets/css/App.css";
 import "./assets/css/media-queries.css";
 
 const stores = {
+  navigation: new NavigationStore(),
   registration: new RegistrationStore(),
   user: new UserStore(),
 }
@@ -54,6 +58,7 @@ function App() {
             <Route path="/request/confirmation" component={RequestConfirmation} />
             <Route path="/request/map" component={RequestMap} />
             <Route path="/helper/map" component={HelperMap} />
+            <Route path="/ratings/pending" component={RatingsPending} />
             <Route path="/">
               <Home />
             </Route>
