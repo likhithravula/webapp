@@ -7,27 +7,50 @@ import Navbar from "react-bootstrap/Navbar";
 
 class Navigation extends React.Component {
   async logoutUser() {
-    const { history, user } = this.props
+    const { navigation, history, user } = this.props
+
+    navigation.expanded = false
 
     await user.logout()
 
     history.push( '/' )
   }
 
+  navigate( view ) {
+    const { history, navigation } = this.props
+
+    navigation.expanded = false
+
+    view && history.push( view )
+  }
+
   render() {
+    const { navigation, user } = this.props
+
     return (
       <header>
         {
-          this.props.user.isLoggedIn() &&
+          user.isLoggedIn() &&
           (
-            <Navbar id="navigation_bar" collapseOnSelect expand="xl">
+            <Navbar id="navigation_bar" expand="xl" collapseOnSelect
+              onToggle={ () => navigation.expanded = true }
+              expanded={ navigation.expanded }
+            >
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="#TBD">Leaderboard</Nav.Link>
-                  <Nav.Link href="#TBD">My profile</Nav.Link>
-                  <Nav.Link href="#TBD">Pending status and history</Nav.Link>
-                  <Nav.Link href="#TBD">Rate persona</Nav.Link>
+                  <Nav.Link onClick={ () => this.navigate( '' ) }>
+                    Leaderboard
+                  </Nav.Link>
+                  <Nav.Link onClick={ () => this.navigate( '' ) }>
+                    My profile
+                  </Nav.Link>
+                  <Nav.Link onClick={ () => this.navigate( '' ) }>
+                    Pending status and history
+                  </Nav.Link>
+                  <Nav.Link onClick={ () => this.navigate( '/ratings/pending' ) }>
+                    Rate
+                  </Nav.Link>
                   <Nav.Link onClick={ () => this.logoutUser() }>
                     Logout
                   </Nav.Link>
@@ -42,5 +65,5 @@ class Navigation extends React.Component {
 }
 
 export default withRouter(
-  inject('user')( observer(Navigation) )
+  inject('navigation', 'user')( observer(Navigation) )
 );
