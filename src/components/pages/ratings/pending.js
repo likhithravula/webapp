@@ -13,7 +13,7 @@ class RatingsPending extends React.Component {
 
   render() {
     const { ratings } = this.props
-    const { message, pending, pendingLoaded } = ratings
+    const { pending, pendingLoaded, pendingMessage } = ratings
 
     return (
       <div className="wrapper">
@@ -25,22 +25,24 @@ class RatingsPending extends React.Component {
             </p>
           </div>
 
-          <div className={ `alert alert-danger ${ message ? '' : 'd-none' }` }
-            onClick={ () => ratings.clearMessage() }
-          >
-            { message }
-          </div>
-
           {
+            pendingMessage ?
+            (
+              <div className={
+                `alert alert-danger ${ pendingMessage ? '' : 'd-none' }`
+              }>
+                { pendingMessage }
+              </div>
+            ) :
             pendingLoaded ?
             (
               <div className="mt-4">
-                 {
-                   pending.length ?
-                     'List of pending ratings'
-                   :
-                     'No pending ratings'
-                 }
+                {
+                  pending.length ?
+                    'List of pending ratings'
+                  :
+                    'No pending ratings'
+                }
               </div>
             ) : ( <div>Loading...</div> )
           }

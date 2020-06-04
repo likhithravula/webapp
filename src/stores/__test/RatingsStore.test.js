@@ -13,7 +13,7 @@ describe( 'RatingsStore', () => {
   })
 
   it( 'should create an empty ratings store', () => {
-    expect( store.message ).toBe( '' )
+    expect( store.pendingMessage ).toBe( '' )
     expect( store.pendingLoaded ).toBe( false )
     expect( store.pending ).toEqual([])
   })
@@ -37,7 +37,7 @@ describe( 'RatingsStore', () => {
 
       expect( result ).toEqual({ success: true })
 
-      expect( store.message ).toEqual( '' )
+      expect( store.pendingMessage ).toEqual( '' )
       expect( store.pendingLoaded ).toBe( true )
       expect( store.pending ).toEqual([{}, {}, {}, {}])
     })
@@ -54,7 +54,7 @@ describe( 'RatingsStore', () => {
 
       expect( result.success ).toBe( false )
 
-      expect( store.message ).toEqual( 'error occurred' )
+      expect( store.pendingMessage ).toEqual( 'error occurred' )
       expect( store.pendingLoaded ).toBe( true )
       expect( store.pending ).toEqual([])
     })
@@ -72,7 +72,7 @@ describe( 'RatingsStore', () => {
       expect( result.success ).toBe( false )
       expect( result.error.message ).toEqual( 'Network crashed' )
 
-      expect( store.message ).toEqual( 'Request failed. Please try again later.' )
+      expect( store.pendingMessage ).toEqual( 'Request failed. Please try again later.' )
       expect( store.pendingLoaded ).toBe( true )
       expect( store.pending ).toEqual([])
     })
