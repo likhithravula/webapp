@@ -52,7 +52,7 @@ describe('authentication', () => {
     .should( 'be.visible' )
     .click()
 
-    cy.get( '#ratings_pending h3' ).contains( 'Rate helper / volunteer' )
+    cy.get( '#ratings_pending h3' ).contains( 'Rate individual / volunteer' )
     .should( 'be.visible' )
   })
 

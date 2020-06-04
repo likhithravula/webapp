@@ -26,8 +26,8 @@ export default class ApiService
     return response.json()
   }
 
-  _get( operation, payload, token ) {
-    return this._invoke( 'GET', operation, payload, token )
+  _get( operation, token ) {
+    return this._invoke( 'GET', operation, null, token )
   }
 
   _post( operation, payload, token ) {
@@ -40,6 +40,13 @@ export default class ApiService
 
   _delete( operation, payload, token ) {
     return this._invoke( 'DELETE', operation, payload, token )
+  }
+
+  //////////////////////////////////////////////////////////////////////////
+  // Ratings API
+
+  listPendingRatings( userId, token ) {
+    return this._get( `user/${ userId }/ratings/pending`, token )
   }
 
   //////////////////////////////////////////////////////////////////////////
