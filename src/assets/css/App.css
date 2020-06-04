@@ -3,6 +3,8 @@
   --helper-color: #68adec;
   --receiver-color: #ffb067;
   --link-color: #f7af69;
+  --req-color: #5CB85C;
+  --decline-color: #D9534F;
 }
 
 * {
@@ -177,4 +179,53 @@ header .menuIcon {
 
 #intro h3 {
   margin-bottom: 40px;
+}
+/*Voulunteer*/
+
+#volunteer-info .profile_info {
+  margin: 30px 0;
+}
+#volunteer-info .profile_info img {
+  margin: 10px 0;
+  height: 100px;
+  width: auto;
+  border-radius:50%;
+  border-style:solid;
+  border-color:#68adef;
+  
+}
+
+#communication .communication_info {
+  margin: 30px 0;
+}
+#communication .communication_info img {
+  display:block;
+  margin-left: auto;
+  margin-right:auto;
+  height: 100px;
+  width: auto;
+ }
+#communication .communication_info p{
+text-align:center;
+margin:25px;
+}
+#req .req-actions .btn{
+display:block;
+width:100%;
+}
+
+.req-btn,
+.req-btn:hover,
+.req-btn:focus,
+.req-btn:active {
+  background-color: var(--req-color);
+  border: 0;
+}
+
+.decline-btn,
+.decline-btn:hover,
+.decline-btn:focus,
+.decline-btn:active {
+  background-color: var(--decline-color);
+  border: 0;
 }
