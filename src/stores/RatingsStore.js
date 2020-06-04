@@ -9,6 +9,10 @@ class RatingsStore {
   pendingLoaded = false
   pending = []
 
+  clearMessage() {
+    message = ''
+  }
+
   async loadRatings( userId, token ) {
     if( !userId || !token )
       throw new Error( 'Invalid state. User not authenticated.' )
