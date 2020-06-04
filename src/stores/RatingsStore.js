@@ -10,7 +10,7 @@ class RatingsStore {
   pending = []
 
   clearMessage() {
-    message = ''
+    this.message = ''
   }
 
   async loadRatings( userId, token ) {

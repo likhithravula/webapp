@@ -44,7 +44,16 @@ describe('authentication', () => {
     .should( 'be.visible' )
   })
 
-  it('should show ratings page', () => {
+  it('should show ratings page when there are no pending ratings', () => {
+    callDeferred.resolve({
+      json: () => (
+      {
+        helpers: [],
+        inneeds: []
+      }),
+      ok: true,
+    })
+
     cy.get( '#navigation_bar .navbar-toggler-icon' )
     .click()
 
@@ -53,6 +62,9 @@ describe('authentication', () => {
     .click()
 
     cy.get( '#ratings_pending h3' ).contains( 'Rate individual / volunteer' )
+    .should( 'be.visible' )
+
+    cy.get( '#ratings_pending div' ).contains( 'No pending ratings' )
     .should( 'be.visible' )
   })
 

@@ -13,7 +13,7 @@ class RatingsPending extends React.Component {
 
   render() {
     const { ratings } = this.props
-    const { message, pendingLoaded } = ratings
+    const { message, pending, pendingLoaded } = ratings
 
     return (
       <div className="wrapper">
@@ -35,7 +35,12 @@ class RatingsPending extends React.Component {
             pendingLoaded ?
             (
               <div className="mt-4">
-                 RATINGS
+                 {
+                   pending.length ?
+                     'List of pending ratings'
+                   :
+                     'No pending ratings'
+                 }
               </div>
             ) : ( <div>Loading...</div> )
           }
