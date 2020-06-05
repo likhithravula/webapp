@@ -14,9 +14,15 @@ import RegistrationInformation from "./components/pages/registration/information
 import RegistrationSkills from "./components/pages/registration/skills";
 import RegistrationFinish from "./components/pages/registration/finish";
 
+import Thankyou from "./components/pages/request/thankYou"
+import RequestVolunteer from "./components/pages/request/reqVolunteer"
+import ReceiverRequest from "./components/pages/request/receiverReq"
+import RequestType from "./components/pages/request/requestType.js"
+import RequestType1 from "./components/pages/request/requestType1.js"
 import RequestHelpType from "./components/pages/request/helpType"
 import RequestSpecify from "./components/pages/request/specify"
 import RequestConfirmation from "./components/pages/request/confirmation"
+import VolunteerMessage from "./components/pages/request/volunteerMessage"
 import RequestMap from "./components/pages/request/map"
 
 import HelperMap from "./components/pages/helper/map"
@@ -56,8 +62,14 @@ function App() {
             <Route path="/registration/skills" component={RegistrationSkills} />
             <Route path="/registration/finish" component={RegistrationFinish} />
             <Route path="/request/helpType" component={RequestHelpType} />
+            <Route path="/request/thankYou" component={Thankyou} />
+            <Route path="/request/reqVolunteer" component={RequestVolunteer} />
+            <Route path="/request/receiverReq" component={ReceiverRequest} />
+            <Route path="/request/requestType" component={RequestType} />
+            <Route path="/request/requestType1" component={RequestType1} />
             <Route path="/request/specify" component={RequestSpecify} />
             <Route path="/request/confirmation" component={RequestConfirmation} />
+            <Route path="/request/volunteerMessage" component={VolunteerMessage} />
             <Route path="/request/map" component={RequestMap} />
             <Route path="/helper/map" component={HelperMap} />
             <Route path="/ratings/pending" component={RatingsPending} />
