@@ -14,7 +14,7 @@ class RequestType extends React.Component {
       <div className="wrapper">
         <section id="Request_type">
           <div className="text-box">
-			<img alt="" src={Shopping} className={Shopping} />
+	     <img alt="" src={Shopping} className={Shopping} />
             <h3>
               Groceries Shopping
             </h3>
@@ -22,13 +22,12 @@ class RequestType extends React.Component {
 
           <Form>
             <Form.Group>
-			  <p> Receiver name ....</p>
+               <p> Receiver name ....</p>
               <Form.Label>Message</Form.Label>
               <Form.Control as="textarea" rows="5"/>
             </Form.Group>
           </Form>
-		  
-		   <div className="text-box">
+	  <div className="text-box">
            <p>Receiver Map Address ..</p>
           </div>
 
@@ -40,7 +39,7 @@ class RequestType extends React.Component {
 	  <p>slots...</p>
 	  </div>
 		  
-		<div id="communication">
+	<div id="communication">
           <div className="wrapper">
             <div className="communication-list">
               <div className="communication_info">
@@ -55,7 +54,7 @@ class RequestType extends React.Component {
 	    	 <p>Live chat with Agda</p>
 	        </div>
               </div>
-			</div>
+	    </div>
           </div>
         </div>
       <div className="wrapper">
@@ -63,7 +62,7 @@ class RequestType extends React.Component {
             <h3>Are you sure ?</h3>
         </div>
       </div>
-		<div id="req">
+	<div id="req">
           <div className="req-actions">
 	      <Link to="/request/requestType1">
                 <Button className="req-btn">Yes</Button>
@@ -72,7 +71,7 @@ class RequestType extends React.Component {
                 <Button className="decline-btn">No</Button>
               </Link>
             </div>
-		</div>
+	 </div>
         </section>
       </div>
     );

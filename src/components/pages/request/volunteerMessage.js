@@ -16,7 +16,7 @@ class VolunteerMessage extends React.Component {
           </div>
 
           <div>
-			Receiver Message
+	    Receiver Message
           </div>
         </section>
       </div>
