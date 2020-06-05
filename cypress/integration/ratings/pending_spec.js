@@ -3,7 +3,17 @@
 const { START_URL } = require( '../../support/config' )
 const deferred = require('../../support/deferred')
 
-describe('authentication', () => {
+const selectRatingsPage = () =>
+{
+  cy.get( '#navigation_bar .navbar-toggler-icon' )
+  .click()
+
+  cy.get( '#navigation_bar a' ).contains( 'Rate' )
+  .should( 'be.visible' )
+  .click()
+}
+
+describe('Ratings / pending', () => {
 
   let callDeferred
 
@@ -45,15 +55,66 @@ describe('authentication', () => {
   })
 
   it('should show ratings page', () => {
-    cy.get( '#navigation_bar .navbar-toggler-icon' )
-    .click()
+    callDeferred.resolve({
+      json: () => (
+      {
+        helpers: [],
+        inneeds: []
+      }),
+      ok: true,
+    })
 
-    cy.get( '#navigation_bar a' ).contains( 'Rate' )
-    .should( 'be.visible' )
-    .click()
+    selectRatingsPage()
 
-    cy.get( '#ratings_pending h3' ).contains( 'Rate helper / volunteer' )
+    cy.get( '#ratings_pending h3' ).contains( 'Rate individual / volunteer' )
     .should( 'be.visible' )
+  })
+
+  it('should show ratings page when there are no pending ratings', () => {
+    callDeferred.resolve({
+      json: () => (
+      {
+        helpers: [],
+        inneeds: []
+      }),
+      ok: true,
+    })
+
+    selectRatingsPage()
+
+    cy.get( '#ratings_pending div' ).contains( 'No pending ratings' )
+    .should( 'be.visible' )
+  })
+
+  it('should show ratings page with ratings', () => {
+    callDeferred.resolve({
+      json: () => (
+      {
+        helpers: [
+          {"id":5,"firstName":"X","lastName":"Y","phone":"653666666","about":"Lorem ipsum dolor sit amet","avatar":null,"address":{"street":"Avda Random 125, 3B","postalCode":"28044","city":"Madrid"},"rating":{"total":0,"average":0}},
+          {"id":6,"firstName":"X","lastName":"Y","phone":"653666666","about":"Lorem ipsum dolor sit amet","avatar":null,"address":{"street":"Avda Random 125, 3B","postalCode":"28044","city":"Madrid"},"rating":{"total":0,"average":0}},
+        ],
+        inneeds: []
+      }),
+      ok: true,
+    })
+
+    selectRatingsPage()
+
+    cy.get( '#ratings_pending div' ).contains( 'List of pending ratings' ) // TODO: will be replaced with list
+    .should( 'be.visible' )
+  })
+
+  it('should display error message', () => {
+    callDeferred.resolve({
+      json: () => ({ msg: 'Could not retrieve ratings' }),
+      ok: true,
+    })
+
+    selectRatingsPage()
+
+    cy.get( 'div.alert-danger' )
+    .should( 'contain', 'Could not retrieve ratings' )
   })
 
 })
