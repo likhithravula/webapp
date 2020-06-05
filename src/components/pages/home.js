@@ -33,7 +33,7 @@ class Home extends React.Component {
         </div>
 
         <div id="home-video">
-          <div class="play">
+          <div className="play">
             <img alt="" src={imagePlayButton} />
           </div>
         </div>
