@@ -1,6 +1,8 @@
 import { inject, observer } from "mobx-react";
 import React from "react";
 
+import PendingEntry from './pendingEntry'
+
 class RatingsPending extends React.Component {
   constructor( props ) {
     super( props )
@@ -39,7 +41,9 @@ class RatingsPending extends React.Component {
               <div className="mt-4">
                 {
                   pending.length ?
-                    'List of pending ratings'
+                    pending.map( entry =>
+                      ( <PendingEntry key={ entry.id } data={ entry }/> )
+                    )
                   :
                     'No pending ratings'
                 }
