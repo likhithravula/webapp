@@ -27,6 +27,7 @@ import RequestMap from "./components/pages/request/map"
 
 import HelperMap from "./components/pages/helper/map"
 
+import Rate from "./components/pages/ratings/rate"
 import RatingsPending from "./components/pages/ratings/pending"
 
 import NavigationStore from './stores/NavigationStore'
@@ -73,6 +74,7 @@ function App() {
             <Route path="/request/map" component={RequestMap} />
             <Route path="/helper/map" component={HelperMap} />
             <Route path="/ratings/pending" component={RatingsPending} />
+            <Route path="/ratings/rate" component={Rate} />
             <Route path="/">
               <Home />
             </Route>

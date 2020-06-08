@@ -38,14 +38,18 @@ class RatingsPending extends React.Component {
             ) :
             pendingLoaded ?
             (
-              <div className="mt-4">
+              <div id="volunteer-info" className="mt-4">
                 {
                   pending.length ?
-                    pending.map( entry =>
-                      ( <PendingEntry key={ entry.id } data={ entry }/> )
-                    )
-                  :
-                    'No pending ratings'
+                  (
+                    <div>
+                      {
+                        pending.map( entry =>
+                          ( <PendingEntry key={ entry.id } data={ entry }/> )
+                        )
+                      }
+                    </div>
+                  ) : 'No pending ratings'
                 }
               </div>
             ) : ( <div>Loading...</div> )

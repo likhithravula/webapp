@@ -16,6 +16,20 @@ describe( 'RatingsStore', () => {
     expect( store.pendingMessage ).toBe( '' )
     expect( store.pendingLoaded ).toBe( false )
     expect( store.pending ).toEqual([])
+    expect( store.rating ).toEqual({ user: {}, value: 0, comment: '' })
+  })
+
+  describe( 'selectUser', () => {
+    it( 'should select the user to rate', async () => {
+      store.selectUser({ id: 10, firstName: 'Jack', lastName: 'Rock' })
+
+      expect( store.rating ).toEqual(
+      {
+        user: { id: 10, firstName: 'Jack', lastName: 'Rock' },
+        value: 0,
+        comment: ''
+      })
+    })
   })
 
   describe( 'loadRatings', () => {
