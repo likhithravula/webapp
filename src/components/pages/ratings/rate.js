@@ -8,12 +8,13 @@ class PendingEntry extends React.Component {
 
   render() {
     const { rating } = this.props.ratings
+    const { user } = rating
 
     return (
       <div className="wrapper">
         <section id="ratings_pending">
           <div className="text-box">
-            <h3>Rate { rating.firstName } { rating.lastName }</h3>
+            <h3>Rate { user.firstName } { user.lastName }</h3>
           </div>
 
           <div id="volunteer-info" className="mt-4">

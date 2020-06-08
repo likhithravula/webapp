@@ -3,6 +3,11 @@
 const { START_URL } = require( '../../support/config' )
 const deferred = require('../../support/deferred')
 
+const SAMPLE_HELPERS = [
+  {"id":5,"firstName":"Nancy","lastName":"Estrada","phone":"653666666","about":"Lorem ipsum dolor sit amet","avatar":null,"address":{"street":"Avda Random 125, 3B","postalCode":"28044","city":"Madrid"},"rating":{"total":0,"average":0}},
+  {"id":6,"firstName":"Juan","lastName":"Tunas","phone":"653666666","about":"Lorem ipsum dolor sit amet","avatar":null,"address":{"street":"Avda Random 125, 3B","postalCode":"28044","city":"Madrid"},"rating":{"total":0,"average":0}},
+]
+
 const selectRatingsPage = () =>
 {
   cy.get( '#navigation_bar .navbar-toggler-icon' )
@@ -90,10 +95,7 @@ describe('Ratings / pending', () => {
     callDeferred.resolve({
       json: () => (
       {
-        helpers: [
-          {"id":5,"firstName":"X","lastName":"Y","phone":"653666666","about":"Lorem ipsum dolor sit amet","avatar":null,"address":{"street":"Avda Random 125, 3B","postalCode":"28044","city":"Madrid"},"rating":{"total":0,"average":0}},
-          {"id":6,"firstName":"X","lastName":"Y","phone":"653666666","about":"Lorem ipsum dolor sit amet","avatar":null,"address":{"street":"Avda Random 125, 3B","postalCode":"28044","city":"Madrid"},"rating":{"total":0,"average":0}},
-        ],
+        helpers: SAMPLE_HELPERS,
         inneeds: []
       }),
       ok: true,
@@ -101,7 +103,17 @@ describe('Ratings / pending', () => {
 
     selectRatingsPage()
 
-    cy.get( '#ratings_pending div' ).contains( 'List of pending ratings' ) // TODO: will be replaced with list
+    cy.get( '#ratings_pending div' ).find( 'div.profile-list' )
+    .should( 'have.length', 2 )
+
+    cy.get( '#rating_5' ).contains( 'Nancy' )
+    .should( 'be.visible' )
+    cy.get( '#rating_5' ).contains( 'Estrada' )
+    .should( 'be.visible' )
+
+    cy.get( '#rating_6' ).contains( 'Juan' )
+    .should( 'be.visible' )
+    cy.get( '#rating_6' ).contains( 'Tunas' )
     .should( 'be.visible' )
   })
 
@@ -115,6 +127,29 @@ describe('Ratings / pending', () => {
 
     cy.get( 'div.alert-danger' )
     .should( 'contain', 'Could not retrieve ratings' )
+  })
+
+  it('should select user to rate', () => {
+    callDeferred.resolve({
+      json: () => (
+      {
+        helpers: SAMPLE_HELPERS,
+        inneeds: []
+      }),
+      ok: true,
+    })
+
+    selectRatingsPage()
+
+    cy.get( '#ratings_pending div' ).find( 'div.profile-list' )
+    .should( 'have.length', 2 )
+
+    cy.get( '#rating_5' ).contains( 'Nancy' )
+    .should( 'be.visible' )
+    .click()
+
+    cy.get( '#ratings_pending h3' ).contains( 'Rate Nancy Estrada' )
+    .should( 'be.visible' )
   })
 
 })

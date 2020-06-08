@@ -19,14 +19,15 @@ class PendingEntry extends React.Component {
     const { data } = this.props
 
     return (
-      <div className="wrapper">
-        <div className="profile-list" onClick={ () => this.openRating() }>
-          <div className="profile_info">
-            <img alt="volunteer pic" src={ profile }/>
-          </div>
-          <div className="profile_info">
-            <p>{ data.firstName } { data.lastName }</p>
-          </div>
+      <div id={ `rating_${ data.id }` }
+        className="profile-list"
+        onClick={ () => this.openRating() }
+      >
+        <div className="profile_info">
+          <img alt="volunteer pic" src={ profile }/>
+        </div>
+        <div className="profile_info">
+          <p>{ data.firstName } { data.lastName }</p>
         </div>
       </div>
     )
