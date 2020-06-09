@@ -38,8 +38,8 @@ class PendingEntry extends React.Component {
     const { user, value } = rating
 
     return (
-      <div className="wrapper">
-        <section id="rate_form">
+      <div id="rate_form" className="wrapper">
+        <section>
           <div className="text-box">
             <h3>Rate { user.firstName } { user.lastName }</h3>
             <p>How would you rate { user.firstName }?</p>
