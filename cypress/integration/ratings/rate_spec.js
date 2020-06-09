@@ -86,4 +86,32 @@ describe('Ratings / rate', () => {
     .should( 'have.value', '' )
   })
 
+  it('should select rating value', () => {
+    selectRatingsForm()
+
+    cy.get( '#rate_form .rating' ).find( '.rating_edit:nth-child(2)' )
+    .click()
+
+    cy.get( '#rate_form .rating' ).find( '.rating_selected' )
+    .should( 'have.length', 4 ) // goes in reverse order, child 2 corresponds to 4 stars
+
+    cy.get( '#rate_form .rating' ).find( '.rating_edit:first-child' )
+    .click()
+
+    cy.get( '#rate_form .rating' ).find( '.rating_selected' )
+    .should( 'have.length', 5 ) // goes in reverse order, child 1 corresponds to 5 stars
+  })
+
+  it('should set the comment', () => {
+    selectRatingsForm()
+
+    cy.get( '#rate_form textarea' ).as( 'comments_field' )
+    .clear().type( 'awesome!' ).blur()
+
+    cy.wait( 100 )
+
+    cy.get( '@comments_field' )
+    .should( 'have.value', 'awesome!' )
+  })
+
 })
