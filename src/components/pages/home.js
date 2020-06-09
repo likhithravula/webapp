@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
+import LandingNav from "../landing-nav";
+import Footer from "../footer";
 import Button from "react-bootstrap/Button";
 import imagePlayButton from "../../assets/img/play.png";
 
@@ -9,9 +11,14 @@ import handHeart from "../../assets/img/hand-heart.svg";
 import lockHeart from "../../assets/img/lock-heart.svg";
 
 class Home extends React.Component {
+
   render() {
+
     return (
       <section id="home">
+        <LandingNav />
+        <div id="hero">
+        </div>
         <div id="claim">
           <div className="claim-overlay"></div>
           <div className="wrapper">
@@ -34,7 +41,7 @@ class Home extends React.Component {
 
         <div id="home-video">
           <div className="play">
-            <img alt="" src={imagePlayButton} />
+            <img alt="" src={imagePlayButton}/>
           </div>
         </div>
 
@@ -81,6 +88,37 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
+
+        <div id="roadmap">
+          <div className="wrapper">
+            <h2>Roadmap</h2>
+            <div className="roadmap-feature-list">
+              <div className="roadmap-feature">
+                <h5>Milestone</h5>
+                <h6 className="roadmap-date" >01.01.2020</h6>
+                <div className="separator"></div>
+              </div>
+              <div className="roadmap-feature">
+                <h5>Milestone</h5>
+                <h6 className="roadmap-date" >02.01.2020</h6>
+                <div className="separator"></div>
+              </div>
+              <div className="roadmap-feature">
+                <h5>Milestone</h5>
+                <h6 className="roadmap-date" >03.01.2020</h6>
+                <div className="separator"></div>
+              </div>
+              <div className="roadmap-feature">
+                <h5>Milestone</h5>
+                <h6 className="roadmap-date" >04.01.2020</h6>
+                <div className="separator"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <Footer />
+
       </section>
     );
   }

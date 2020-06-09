@@ -25,6 +25,7 @@ class Navigation extends React.Component {
   }
 
   render() {
+
     const { navigation, user } = this.props
 
     return (
