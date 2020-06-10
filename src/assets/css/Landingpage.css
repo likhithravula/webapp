@@ -17,8 +17,27 @@
 /* HERO SHOT */
 
 #hero {
-    height: 45vh;
-    background-color: var(--receiver-color);
+    display: flex;
+    align-items: center;
+    height: 55vh;
+    background-image: url("../img/the-digital-volunteer-key-visual.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 35px;
+}
+
+#hero-cta h1 {
+    font-size: 36px;
+}
+
+#vertical-separator {
+    width: 50vw;
 }
 
 /* ROADMAP */
@@ -29,7 +48,7 @@
 
 .roadmap-feature-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 25px;
 }
 
@@ -37,11 +56,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 35px 0px 35px;
 }
 
-.roadmap-date {
-
+.roadmap-icon {
+    margin-bottom: 20px;
 }
 
 /* FOOTER */
