@@ -5,6 +5,7 @@
   --link-color: #f7af69;
   --req-color: #5CB85C;
   --decline-color: #D9534F;
+  --hover-rating-color: #C0C0C0;
 }
 
 * {
@@ -201,7 +202,7 @@ header .menuIcon {
   border-radius:50%;
   border-style:solid;
   border-color:#68adef;
-  
+
 }
 
 #communication .communication_info {
@@ -221,6 +222,25 @@ margin:25px;
 #req .req-actions .btn{
 display:block;
 width:100%;
+}
+
+.rating {
+  font-size: 64px;
+}
+
+.rating > span:before {
+  content: '☆';
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.rating > span.rating_selected:before {
+  content: '★' !IMPORTANT;
+}
+
+.rating > span:hover:before,
+.rating   span:hover~span:before {
+  background-color: var(--hover-rating-color);
 }
 
 .req-btn,
