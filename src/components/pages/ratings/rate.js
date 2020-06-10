@@ -43,7 +43,7 @@ class PendingEntry extends React.Component {
   }
 
   render() {
-    const { rating } = this.props.ratings
+    const { rating, ratingMessage } = this.props.ratings
     const { user, value } = rating
 
     return (
