@@ -22,7 +22,7 @@ class LandingNav extends React.Component {
                 </Navbar.Brand>
                 <Nav>
                     <a class="nav-link" href="#claim">About</a>
-                    <a class="nav-link" href="#home-info">How it works</a>
+                    <a class="nav-link" href="#home-video">How it works</a>
                     <a class="nav-link" href="#roadmap">Roadmap</a>
                 </Nav>
             </Navbar>

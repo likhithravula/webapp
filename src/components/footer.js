@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 
 import Navbar from "react-bootstrap/Navbar";
 import '../assets/css/Landingpage.css';
+import '../assets/css/media-queries.css';
 
 class LandingNav extends React.Component {
 

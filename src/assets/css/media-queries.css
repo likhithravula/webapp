@@ -46,3 +46,38 @@
     grid-column-gap: 30px;
   }
 }
+
+
+@media screen and (max-width: 720px){
+
+  .roadmap-feature-list {
+    flex-direction: column;
+  }
+
+  #video-player {
+    width: 100vw !important;
+    height: 30vh !important;
+  }
+}
+
+@media screen and (max-width: 900px){
+
+  #hero {
+    background-color: var(--receiver-color);
+    background-image: none;
+    justify-content: center;
+  }
+
+  #vertical-separator {
+    display: none;
+  }
+
+  #hero-cta {
+    align-items: center;
+    justify-content: center;
+  }
+
+  #hero-cta p {
+    text-align: center;
+  }
+}
