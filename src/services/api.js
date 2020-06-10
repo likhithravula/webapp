@@ -49,6 +49,10 @@ export default class ApiService
     return this._get( `user/${ userId }/ratings/pending`, token )
   }
 
+  addRating( rating, token ) {
+    return this._post( 'rating', rating, token )
+  }
+
   //////////////////////////////////////////////////////////////////////////
   // User API
 

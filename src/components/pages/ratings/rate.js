@@ -1,5 +1,6 @@
 import { inject, observer } from "mobx-react";
 import React from "react";
+import { withRouter } from 'react-router';
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -29,12 +30,20 @@ class PendingEntry extends React.Component {
     rating.comment = value
   }
 
-  save() {
-    // TODO: save rating
+  async save() {
+    const { history, ratings, user } = this.props
+
+    const result = await ratings.save( user.data.id, user.token )
+
+    if( result.success ) {
+      ratings.pendingLoaded = false // force reload
+
+      history.push( '/ratings/pending' )
+    }
   }
 
   render() {
-    const { rating } = this.props.ratings
+    const { rating, ratingMessage } = this.props.ratings
     const { user, value } = rating
 
     return (
@@ -44,6 +53,15 @@ class PendingEntry extends React.Component {
             <h3>Rate { user.firstName } { user.lastName }</h3>
             <p>How would you rate { user.firstName }?</p>
           </div>
+
+          {
+            ratingMessage &&
+            (
+              <div className="alert alert-danger">
+                { ratingMessage }
+              </div>
+            )
+          }
 
           <div id="volunteer-info" className="mt-4">
             <div className="profile-list">
@@ -104,4 +122,6 @@ class PendingEntry extends React.Component {
   }
 }
 
-export default inject('ratings')( observer(PendingEntry) )
+export default withRouter(
+  inject('ratings', 'user')( observer(PendingEntry) )
+)
