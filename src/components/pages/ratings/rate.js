@@ -30,7 +30,9 @@ class PendingEntry extends React.Component {
   }
 
   save() {
-    // TODO: save rating
+    const { ratings, user } = this.props
+
+    ratings.save( user.data.id, user.token )
   }
 
   render() {
@@ -44,6 +46,15 @@ class PendingEntry extends React.Component {
             <h3>Rate { user.firstName } { user.lastName }</h3>
             <p>How would you rate { user.firstName }?</p>
           </div>
+
+          {
+            ratingMessage &&
+            (
+              <div className="alert alert-danger">
+                { ratingMessage }
+              </div>
+            )
+          }
 
           <div id="volunteer-info" className="mt-4">
             <div className="profile-list">
@@ -104,4 +115,4 @@ class PendingEntry extends React.Component {
   }
 }
 
-export default inject('ratings')( observer(PendingEntry) )
+export default inject('ratings', 'user')( observer(PendingEntry) )

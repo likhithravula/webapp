@@ -6,6 +6,9 @@ class RatingsStore {
   api = new ApiService()
 
   pendingMessage = ''
+  ratingMessage = ''
+  successMessage = ''
+
   pendingLoaded = false
   pending = []
   rating = {
@@ -14,11 +17,27 @@ class RatingsStore {
     comment: ''
   }
 
-  selectUser( user )
-  {
+  clearRating() {
+    this.rating = {
+      user: {},
+      value: 0,
+      comment: ''
+    }
+
+    this.ratingMessage = ''
+  }
+
+  clearSuccessMessage() {
+    this.successMessage = ''
+  }
+
+  selectUser( user ) {
     this.rating.user = user
     this.rating.value = 0
     this.rating.comment = ''
+
+    this.ratingMessage = ''
+    this.successMessage = ''
   }
 
   async loadRatings( userId, token ) {
@@ -50,6 +69,41 @@ class RatingsStore {
       this.pendingLoaded = true
     }
   }
+
+  async save( userId, token ) {
+    if( !userId || !token )
+      throw new Error( 'Invalid state. User not authenticated.' )
+
+    this.ratingMessage = ''
+    this.successMessage = ''
+
+    const rating = {
+      fromUser: userId,
+      toUser: this.rating.user.id,
+      value: this.rating.value,
+      comment: this.rating.comment
+    }
+
+    try {
+      const response = await this.api.addRating( rating, token )
+
+      if( response.id ) { // data was returned
+        this.successMessage = `You have successfully rated ${ this.rating.user.firstName }`
+        this.clearRating()
+
+        return { success: true }
+      }
+      else {
+        this.ratingMessage = response.msg || 'An error occurred.'
+
+        return { success: false, ...response }
+      }
+    } catch (error) {
+      this.ratingMessage = 'Request failed. Please try again later.'
+
+      return { success: false, error }
+    }
+  }
 }
 
 decorate( RatingsStore, {
@@ -57,6 +111,8 @@ decorate( RatingsStore, {
   pendingLoaded: observable,
   pending: observable,
   rating: observable,
+  ratingMessage: observable,
+  successMessage: observable,
 })
 
 export default RatingsStore
