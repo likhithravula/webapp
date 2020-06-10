@@ -8,6 +8,18 @@ class RatingsStore {
   pendingMessage = ''
   pendingLoaded = false
   pending = []
+  rating = {
+    user: {},
+    value: 0,
+    comment: ''
+  }
+
+  selectUser( user )
+  {
+    this.rating.user = user
+    this.rating.value = 0
+    this.rating.comment = ''
+  }
 
   async loadRatings( userId, token ) {
     if( !userId || !token )
@@ -44,6 +56,7 @@ decorate( RatingsStore, {
   pendingMessage: observable,
   pendingLoaded: observable,
   pending: observable,
+  rating: observable,
 })
 
 export default RatingsStore
