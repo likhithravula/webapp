@@ -30,27 +30,17 @@ import HelperMap from "./components/pages/helper/map"
 import Rate from "./components/pages/ratings/rate"
 import RatingsPending from "./components/pages/ratings/pending"
 
-import NavigationStore from './stores/NavigationStore'
-import RatingsStore from './stores/RatingsStore'
-import RegistrationStore from './stores/RegistrationStore'
-import UserStore from './stores/UserStore'
+import persistentStore from './stores/PersistentStore'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./assets/css/App.css";
 import "./assets/css/media-queries.css";
 
-const stores = {
-  navigation: new NavigationStore(),
-  ratings: new RatingsStore(),
-  registration: new RegistrationStore(),
-  user: new UserStore(),
-}
-
 function App() {
   return (
     <div className="App">
-      <Provider {...stores}>
+      <Provider {...persistentStore}>
         <BrowserRouter>
           <Navigation />
           <Switch>
