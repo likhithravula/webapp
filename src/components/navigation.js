@@ -27,6 +27,7 @@ class Navigation extends React.Component {
   render() {
 
     const { navigation, user } = this.props
+    const { data } = user // quirk, for some reason user is not hydrated unless the data field is extracted; this not work for token.
 
     return (
       <header>

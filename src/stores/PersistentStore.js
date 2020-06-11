@@ -1,4 +1,4 @@
-import { create } from 'mobx-persist'
+import { create, persist } from 'mobx-persist'
 
 import NavigationStore from './NavigationStore'
 import RatingsStore from './RatingsStore'
@@ -7,17 +7,29 @@ import UserStore from './UserStore'
 
 const hydrate = create({})
 
+const userSchema = {
+  token: true,
+  data: {
+    type: 'object',
+    schema: {
+      id: true,
+      firstName: true,
+      lastName: true, // TODO: add new persisted fields as necessary
+    }
+  }
+}
+
 class PersistentStore {
   navigation = new NavigationStore()
   ratings = new RatingsStore()
   registration = new RegistrationStore()
-  user = new UserStore()
+  user = persist( userSchema )( new UserStore() )
 
   constructor() {
-    Promise.all([
-      hydrate( 'navigation', this.navigation ),
-      hydrate( 'ratings', this.ratings ),
-      hydrate( 'registration', this.registration ),
+    Promise.all([ // hydrate and persist stores as necessary
+      this.navigation,
+      this.ratings,
+      this.registration,
       hydrate( 'user', this.user ),
     ])
   }
