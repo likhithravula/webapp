@@ -2,12 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
+import check from "../../../assets/img/green-check.png";
+import Progress from "./progress";
 
 class RegistrationFinish extends React.Component {
   render() {
+    const current = 6;
+
     return (
       <div className="wrapper">
-        <section id="registration_finish">
+        <Progress current={current}/>
+        <section id="registration-finish">
+          <img alt="" src={check} />
           <div className="text-box">
             <h3>Congratulations !</h3>
             <p>

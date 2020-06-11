@@ -168,6 +168,53 @@ header .menuIcon {
   width: auto;
 }
 
+/* REGISTRATION */
+
+.checkbox-wrapper {
+  padding: 15px 0px 15px 0px;
+  border-top: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox-wrapper input {
+  position: relative;
+  right: 0px;
+}
+
+#registration-finish {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#registration-finish img {
+  margin-bottom: 25px;
+}
+
+
+/* PROGRESS */
+
+.page-link {
+  color: var(--receiver-color) !important;
+  border: none !important;
+  background-color: transparent !important;
+  padding: 3px;
+  font-size: 20px !important;
+  cursor: default;
+}
+
+#page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-wrapper p {
+  margin-right: 10px;
+}
+
+
 /* ENTER */
 
 #intro {
@@ -186,7 +233,8 @@ header .menuIcon {
 #intro h3 {
   margin-bottom: 40px;
 }
-/*Voulunteer*/
+
+/* VOLUNTEER */
 
 #volunteer-info .profile_info {
   margin: 30px 0;

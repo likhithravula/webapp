@@ -6,7 +6,8 @@
   "license": "GPL-3.0",
   "contributors": [
     "David Maillo",
-    "Santiago Arriaga <santiago.arriaga9@gmail.com>"
+    "Santiago Arriaga <santiago.arriaga9@gmail.com>",
+    "Tom Bjarne Seidel <tom@fjellsson.com>"
   ],
   "scripts": {
     "start": "react-scripts start",

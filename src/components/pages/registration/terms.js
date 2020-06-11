@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Progress from "./progress";
 
 class RegistrationTerms extends React.Component {
+  pageId;
 
   constructor( props ) {
     super( props )
-
+    this.pageId = 1;
     this.changeTermsOfServiceFlag = this.changeTermsOfServiceFlag.bind( this )
   }
 
@@ -21,9 +23,11 @@ class RegistrationTerms extends React.Component {
 
   render() {
     const { registration } = this.props;
+    const current = 1;
 
     return (
       <div className="wrapper">
+        <Progress current={current}/>
         <section id="registration_terms">
           <div className="text-box">
             <h3>Terms and conditions</h3>

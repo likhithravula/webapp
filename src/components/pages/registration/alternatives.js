@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Progress from "./progress";
 
 class RegistrationAlternatives extends React.Component {
   constructor( props ) {
@@ -21,9 +22,11 @@ class RegistrationAlternatives extends React.Component {
 
   render() {
     const { role } = this.props.registration.user;
+    const current = 2;
 
     return (
       <div className="wrapper">
+        <Progress current={current}/>
         <section id="registration_alternatives">
           <div className="text-box">
             <h3>Choose the alternative that suits you the best</h3>
