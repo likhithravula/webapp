@@ -28,7 +28,7 @@ class Navigation extends React.Component {
     const { navigation, user } = this.props
 
     // eslint-disable-next-line
-    const { data } = user // quirk, for some reason user is not hydrated unless the data field is extracted; this not work for token.
+    const { data } = user // quirk, for some reason user is not hydrated unless the data field is extracted; this does not work for token.
 
     return (
       <header>
