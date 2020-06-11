@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Progress from "./progress";
 
 class RegistrationInformation extends React.Component {
 
@@ -43,9 +44,11 @@ class RegistrationInformation extends React.Component {
       firstName, lastName, phone, email, address
     } = user;
     const { street, postalCode, city } = address
+    const current = 4;
 
     return (
       <div className="wrapper">
+        <Progress current={current}/>
         <section id="registration_information">
           <div className="text-box">
             <h3>Fill in your information</h3>

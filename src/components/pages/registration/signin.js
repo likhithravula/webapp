@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Progress from "./progress";
 
 class RegistrationBankID extends React.Component {
   render() {
+    const current = 3;
     return (
       <div className="wrapper">
+        <Progress current={current}/>
         <section id="registration_signin">
           <div className="text-box">
             <h3>Create an account with BankID</h3>
