@@ -1,6 +1,6 @@
 /* eslint-disable no-undef, max-statements, no-magic-numbers */
 
-const { START_URL } = require( '../support/config' )
+const { START_URL, TEST_SERVER } = require( '../support/config' )
 const deferred = require('../support/deferred')
 
 describe('authentication', () => {
@@ -130,6 +130,12 @@ describe('authentication', () => {
 
       cy.get( '#navigation_bar a' ).contains( 'Logout' )
       .should( 'be.visible' )
+    })
+
+    it('should show menu bar even if the page is refreshed', () => { // here we are testing that user token persistence is working
+      cy.visit( `${ TEST_SERVER }/helper/map` )
+
+      cy.get( '#navigation_bar' ).should( 'be.visible' )
     })
 
     it('should log out a volunteer', () => {
