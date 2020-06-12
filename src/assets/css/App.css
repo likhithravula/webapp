@@ -215,6 +215,32 @@ header .menuIcon {
 }
 
 
+/* MAP */
+
+.map-container {
+  right: 0px;
+}
+
+.map-pin li {
+  width: 55px;
+  height: 55px;
+  border-radius: 100px;
+  padding: 10px;
+  margin: 8px;
+  border: 3px solid #06375b;
+  background-position: center;
+  background-size: 32px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: url("../img/shopping.png");
+}
+
+#pins-wrapper h3{
+  text-align: left;
+  margin-left: 15px;
+}
+
+
 /* ENTER */
 
 #intro {

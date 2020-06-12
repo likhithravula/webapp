@@ -1,10 +1,12 @@
 import React from "react";
 
+import MapContainer from "./googlemap";
+
 class RequestMap extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <section id="registration_finish">
+        <section id="map-wrapper">
           <div className="text-box">
             <h3>
               Here you can see all people who need help
@@ -14,10 +16,7 @@ class RequestMap extends React.Component {
               Click on the pins to see information about the volunteers.
             </p>
           </div>
-
-          <div>
-            Filter pins and map...
-          </div>
+          <MapContainer />
         </section>
       </div>
     );
