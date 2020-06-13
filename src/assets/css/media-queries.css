@@ -60,6 +60,13 @@
   }
 }
 
+@media screen and (max-height: 820px){
+  .map-container,
+  .map-container:first-child {
+    top: 50vh;
+  }
+}
+
 @media screen and (max-width: 900px){
 
   #hero {

@@ -219,6 +219,9 @@ header .menuIcon {
 
 .map-container {
   right: 0px;
+  bottom: 0px;
+  height: 62vh !important;
+  overflow: hidden;
 }
 
 .map-pin li {
@@ -232,7 +235,26 @@ header .menuIcon {
   background-size: 32px;
   background-repeat: no-repeat;
   cursor: pointer;
+}
+
+.food {
   background-image: url("../img/shopping.png");
+}
+
+.medicine {
+
+}
+
+.home {
+
+}
+
+.volunteer {
+
+}
+
+.transport {
+
 }
 
 #pins-wrapper h3{
