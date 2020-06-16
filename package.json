@@ -10,8 +10,9 @@
     "Tom Bjarne Seidel <tom@fjellsson.com>"
   ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack",
+    "postinstall": "npm run build",
+    "start": "node bin/www"
     "run-integration-tests": "cypress run",
     "test": "react-scripts test --watchAll=false && start-server-and-test start http://localhost:3000 run-integration-tests",
     "test-unit": "react-scripts test",
