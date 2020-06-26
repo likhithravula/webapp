@@ -108,6 +108,34 @@ header .menuIcon {
   border: 0;
 }
 
+/* NAVIGATION */
+#nav-wrapper {
+  width: 100vw;
+}
+
+#nav-wrapper,
+#logo {
+  padding: 0px;
+  z-index: 10;
+}
+
+#nav {
+  flex-direction: row;
+}
+
+.nav-link {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#responsive-navbar-nav {
+  flex-direction: row-reverse;
+}
+
+#responsive-navbar-nav div {
+  margin-right: 0px !important;
+}
+
 /* HOME */
 #home #claim {
   position: relative;
@@ -306,14 +334,14 @@ header .menuIcon {
   margin-right:auto;
   height: 100px;
   width: auto;
- }
+}
 #communication .communication_info p{
-text-align:center;
-margin:25px;
+  text-align:center;
+  margin:25px;
 }
 #req .req-actions .btn{
-display:block;
-width:100%;
+  display:block;
+  width:100%;
 }
 
 .rating {
