@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm i`
+
+Installs the required packages
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
@@ -14,18 +18,18 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Run all tests in non-interactive mode. A server is started as part of the
+Runs all tests in non-interactive mode. A server is started as part of the
 integration tests, so it's not required that the development server is running
 when this is invoked.
 
 ### `npm run test-unit`
 
-Run unit tests in interactive mode. Unit tests do not require npm start to be
+Runs unit tests in interactive mode. Unit tests do not require npm start to be
 running.
 
 ### `npx cypress open`
 
-Open cypress tool to run integration tests in interactive mode.
+Opens cypress tool to run integration tests in interactive mode.
 Another terminal, or a background process, should be left running with npm start,
 so tests can run against it.
 
