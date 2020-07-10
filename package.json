@@ -7,7 +7,8 @@
   "contributors": [
     "David Maillo",
     "Santiago Arriaga <santiago.arriaga9@gmail.com>",
-    "Tom Bjarne Seidel <tom@fjellsson.com>"
+    "Tom Bjarne Seidel <tom@fjellsson.com>",
+    "Kewal Shah <kewalshah077@gmail.com>"
   ],
   "scripts": {
     "start": "react-scripts start",
@@ -32,8 +33,10 @@
     "react-bootstrap-icons": "^1.0.1-alpha3",
     "react-dom": "^16.13.1",
     "react-player": "^2.2.0",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "cypress": "^4.5.0",
