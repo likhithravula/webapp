@@ -16,6 +16,8 @@ class Signin extends React.Component {
       password: 'test'
     }
 
+    history.push( '/helper/map' )
+
     const response = await user.login()
 
     if( response.token ) {

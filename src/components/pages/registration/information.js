@@ -27,14 +27,17 @@ class RegistrationInformation extends React.Component {
   async _registerUser()
   {
     const { registration, user } = this.props
+    console.log('hello')
 
-    const response = await registration.register()
+    // const response = await registration.register()
 
-    if( response.token ) {
-      user.data = response
+    this.props.history.push( '/registration/finish' )
 
-      this.props.history.push( '/registration/finish' )
-    }
+    // if( response.token ) {
+    //   user.data = response
+
+    //   this.props.history.push( '/registration/finish' )
+    // }
   }
 
   render() {

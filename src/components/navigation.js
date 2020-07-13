@@ -57,8 +57,9 @@ class Navigation extends React.Component {
             </Navbar.Brand>
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
+                {/* TODO: switch logged in status once error is fixed */}
                 {
-                  user.isLoggedIn() &&
+                  !user.isLoggedIn() &&
                   (
                       <div>
                     <span className="nav-link" onClick={ () => this.navigate( '' ) }>
@@ -80,7 +81,7 @@ class Navigation extends React.Component {
                   )
                 }
                 {
-                  !user.isLoggedIn() &&
+                  user.isLoggedIn() &&
                   (
                       <span className="nav-link" onClick={ () => this.navigate( '/signin')}>Login</span>
                   )

@@ -23,10 +23,10 @@
     grid-column-gap: 10px;
   }
 
-  #req .req-actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-column-gap:10px;
+  #req .req-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
   }
 
   .separator {
@@ -34,7 +34,8 @@
     margin-right: auto;
   }
 
-  #Receiver_Request .profile-list, #ratings_pending .profile-list {
+  #Receiver_Request .profile-list,
+  #ratings_pending .profile-list {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-column-gap: 10px;
@@ -47,9 +48,7 @@
   }
 }
 
-
-@media screen and (max-width: 720px){
-
+@media screen and (max-width: 720px) {
   .roadmap-feature-list {
     flex-direction: column;
   }
@@ -60,15 +59,14 @@
   }
 }
 
-@media screen and (max-height: 820px){
+@media screen and (max-height: 820px) {
   .map-container,
   .map-container:first-child {
     top: 50vh;
   }
 }
 
-@media screen and (max-width: 900px){
-
+@media screen and (max-width: 900px) {
   #hero {
     background-color: var(--receiver-color);
     background-image: none;
@@ -89,13 +87,23 @@
   }
 }
 
-@media screen and (max-width: 1199px){
+@media screen and (max-width: 1199px) {
   #nav {
     flex-direction: row-reverse !important;
     justify-content: space-between;
   }
 
   #responsive-navbar-nav div {
+    float: right;
+    text-align: right;
+    margin-right: 5px !important;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  #responsive-navbar-nav div {
+    flex: 1;
+    flex-direction: 'row';
     float: right;
     text-align: right;
     margin-right: 5px !important;
