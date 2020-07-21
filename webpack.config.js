@@ -1,17 +1,18 @@
+// webpack.config.js
+
 module.exports = {
-module: {
+  module: {
     rules: [
-        {
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/env', "@babel/react"],
-            }
-          }
-          }
-    ]
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env', '@babel/react'],
+          },
+        },
+      },
+    ],
+  },
 }
-}
-

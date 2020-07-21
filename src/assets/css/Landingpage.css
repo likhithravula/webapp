@@ -12,6 +12,7 @@
 
 .nav-elem:hover {
     color: var(--receiver-color);
+    font-weight: bold;
 }
 
 /* HERO SHOT */

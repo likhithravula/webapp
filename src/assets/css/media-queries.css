@@ -97,15 +97,7 @@
     float: right;
     text-align: right;
     margin-right: 5px !important;
-  }
-}
-
-@media screen and (min-width: 1199px) {
-  #responsive-navbar-nav div {
-    flex: 1;
-    flex-direction: 'row';
-    float: right;
-    text-align: right;
-    margin-right: 5px !important;
+    display: flex;
+    flex-direction: column;
   }
 }
