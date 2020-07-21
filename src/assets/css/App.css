@@ -134,6 +134,7 @@ header .menuIcon {
 
 #responsive-navbar-nav div {
   margin-right: 0px !important;
+  display: flex;
 }
 
 /* HOME */
