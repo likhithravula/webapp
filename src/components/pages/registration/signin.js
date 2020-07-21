@@ -13,35 +13,40 @@ class RegistrationBankID extends React.Component {
         <Progress current={current}/>
         <section id="registration_signin">
           <div className="text-box">
-            <h3>Create an account with BankID</h3>
-            <p>
-              We use bankID to ensure people that the service is safe and
-              reliable.
-            </p>
+            <h3>Welcome</h3>
           </div>
 
           <Form>
             <Form.Group>
-              <Form.Label>Login with Mobile BankID</Form.Label>
-              <Form.Control type="text"/>
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="text"  size="lg" name="email" placeholder="Enter your Email"/>
             </Form.Group>
           </Form>
+		  
+		  <Form>
+		  <Form.Group>
+              <Form.Label>Create Password</Form.Label>
+              <Form.Control type="text" size="lg" name="password" placeholder="**********"/>
+            </Form.Group>
+          </Form>
+		  
+		  <Form>
+		  <Form.Group>
+              <Form.Label>What is you Favorite Color</Form.Label>
+              <Form.Control type="text" size="lg" name="passwordhint" placeholder="This will be your Password Hint"/>
+            </Form.Group>
+          </Form>
+
+
 
           <div className="mt-4">
             <Link to="/registration/information">
               <Button className="btn btn-block helper-btn">
-                Next - Information about you
+                SignUp
               </Button>
             </Link>
           </div>
 
-          <div>
-            <p className="text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-            porttitor facilisis massa vel maximus.&nbsp;
-            <Link to="">GDPR INFO</Link>
-            </p>
-          </div>
         </section>
       </div>
     );

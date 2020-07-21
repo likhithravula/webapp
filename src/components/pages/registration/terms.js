@@ -65,7 +65,7 @@ class RegistrationTerms extends React.Component {
               <Button className="btn btn-block helper-btn"
                 disabled={ !registration.termsOfServiceAccepted }
               >
-                Next - Sign in
+                Create My Account
               </Button>
             </Link>
           </div>

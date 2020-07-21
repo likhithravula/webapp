@@ -55,7 +55,7 @@ class RegistrationAlternatives extends React.Component {
           <div className="mt-4">
             <Link to="/registration/signin">
               <Button className="btn btn-block helper-btn" disabled={ !role }>
-                Next - Sign in
+                Sign Up
               </Button>
             </Link>
           </div>
