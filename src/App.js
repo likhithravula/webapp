@@ -58,6 +58,7 @@ export default class App extends Component {
   render() {
     const { userData } = this.state;
     const authOptions = {
+      redirectTo: '/',
       appDetails: {
         name: "Digital Volunteers",
         icon: window.location.origin + '/logo.png',
@@ -65,6 +66,8 @@ export default class App extends Component {
       userSession,
       finished: ({ userSession }) => {
         this.setState({ userData: userSession.loadUserData() });
+        console.log(this.state.userData);
+        
       },
     };
     return (

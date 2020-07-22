@@ -10,17 +10,24 @@ import { useConnect } from '@blockstack/connect';
 import { Person } from 'blockstack';
 
 
+const Login = () => {
+  const { doOpenAuth } = useConnect();
+
+  return(
+    <span
+    className='nav-link'
+    onClick={() => doOpenAuth(true)}
+    >Login</span>
+  )
+}
 
 const Auth = () => {
-  console.log("Testing1");
-  console.log(`useConnect ${useConnect().toString()}`)
+  
   const { authOptions } = useConnect();
   const { userSession } = authOptions;
   
-  console.log(`userSession ${userSession}`);
-
   if (!userSession.isUserSignedIn()) {
-    return null;
+    return <Login/>;
   }
 
   const userData = userSession.loadUserData();
@@ -48,20 +55,15 @@ const Auth = () => {
   return (
     <Box>
       <Avatar />
-      <Text fontWeight="500">{userData.username}</Text>
-      <Text
-        fontWeight="300"
-        display="inline-block"
-        ml={5}
-        color="ink.400"
-        cursor="pointer"
-        onClick={() => {
-          userSession.signUserOut();
-          window.location = '/';
-        }}
-      >
-        Sign out
-      </Text>
+      <span className='nav-link'
+      onClick={() => this.navigate('')}>{userData.username}</span>
+
+      <span className='nav-link'
+      onClick={() => {
+        userSession.signUserOut();
+        window.location = '/';
+      }}>Sign out</span>
+
     </Box>
   );
 };
@@ -79,12 +81,6 @@ class Navigation extends React.Component {
     this.toggleNavbar = this.toggleNavbar.bind(this)
   }
 
-  async logoutUser() {
-    const { history, user } = this.props
-    await user.logout()
-    history.push('/')
-    window.location.reload()
-  }
 
   /* TODO: properly close navbar on navigation and logout */
   navigate(view) {
@@ -113,7 +109,7 @@ class Navigation extends React.Component {
           </Navbar.Brand>
           <Navbar.Collapse id='responsive-navbar-nav'>
             <Nav className='mr-auto'>
-              {/* TODO: switch logged in status once error is fixed */}
+            
               {!user.isLoggedIn() && (
                 <div>
                   <span className='nav-link' onClick={() => this.navigate('')}>
@@ -130,29 +126,11 @@ class Navigation extends React.Component {
                     onClick={() => this.navigate('/ratings/pending')}
                   >
                     Rate
-                  </span>
-                  <span
-                    className='nav-link'
-                    onClick={() => this.logoutUser('/')}
-                  >
-                    Logout
-                  </span>
-                  <span 
-                  className='nav-link'
-                  >
-
-                  </span>
+                  </span>                 
                 </div>
               )}
-              {user.isLoggedIn() && (
-                <span
-                  className='nav-link'
-                  onClick={() => this.navigate('/signin')}
-                >
-                  Login
-                </span>
-              )}
               <Auth/>
+              
             </Nav>
           </Navbar.Collapse>
         </Navbar>
