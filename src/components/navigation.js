@@ -5,6 +5,68 @@ import { withRouter } from 'react-router'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import logo from '../assets/img/logo.png'
+import { Flex, Box, Text } from '@blockstack/ui';
+import { useConnect } from '@blockstack/connect';
+import { Person } from 'blockstack';
+
+
+
+const Auth = () => {
+  console.log("Testing1");
+  console.log(`useConnect ${useConnect().toString()}`)
+  const { authOptions } = useConnect();
+  const { userSession } = authOptions;
+  
+  console.log(`userSession ${userSession}`);
+
+  if (!userSession.isUserSignedIn()) {
+    return null;
+  }
+
+  const userData = userSession.loadUserData();
+
+  const Avatar = () => {
+    const person = new Person(userData.profile);
+    if (person.avatarUrl()) {
+      return (
+        <Box
+          borderRadius="50%"
+          width="24px"
+          height="24px"
+          display="inline-block"
+          overflow="hidden"
+          mr={2}
+          style={{ position: 'relative', top: '6px' }}
+        >
+          <Box as="img" src={person.avatarUrl()} maxWidth="100%" minHeight="24px" minWidth="24px" />
+        </Box>
+      );
+    }
+    return null;
+  };
+
+  return (
+    <Box>
+      <Avatar />
+      <Text fontWeight="500">{userData.username}</Text>
+      <Text
+        fontWeight="300"
+        display="inline-block"
+        ml={5}
+        color="ink.400"
+        cursor="pointer"
+        onClick={() => {
+          userSession.signUserOut();
+          window.location = '/';
+        }}
+      >
+        Sign out
+      </Text>
+    </Box>
+  );
+};
+
+
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -75,6 +137,11 @@ class Navigation extends React.Component {
                   >
                     Logout
                   </span>
+                  <span 
+                  className='nav-link'
+                  >
+
+                  </span>
                 </div>
               )}
               {user.isLoggedIn() && (
@@ -85,6 +152,7 @@ class Navigation extends React.Component {
                   Login
                 </span>
               )}
+              <Auth/>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

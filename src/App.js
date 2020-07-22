@@ -1,5 +1,5 @@
 import { Provider } from 'mobx-react'
-import React from "react";
+import React, {Component} from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Navigation from "./components/navigation";
@@ -36,10 +36,39 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./assets/css/App.css";
 import "./assets/css/media-queries.css";
+import logo from "./assets/img/logo.png";
+import { UserSession } from 'blockstack';
+import { appConfig } from './constants';
+import { Connect } from '@blockstack/connect';
 
-function App() {
-  return (
-    <div className="App">
+const userSession = new UserSession({ appConfig });
+
+
+export default class App extends Component {
+  state = {
+    userData: null,
+  };
+
+  handleSignOut(e) {
+    e.preventDefault();
+    this.setState({ userData: null });
+    userSession.signUserOut(window.location.origin);
+  }
+
+  render() {
+    const { userData } = this.state;
+    const authOptions = {
+      appDetails: {
+        name: "Digital Volunteers",
+        icon: window.location.origin + '/logo.png',
+      },
+      userSession,
+      finished: ({ userSession }) => {
+        this.setState({ userData: userSession.loadUserData() });
+      },
+    };
+    return (
+      <Connect className="App" authOptions={authOptions}>
       <Provider {...persistentStore}>
         <BrowserRouter>
           <Navigation />
@@ -71,8 +100,19 @@ function App() {
           </Switch>
         </BrowserRouter>
       </Provider>
-    </div>
-  );
-}
+    </Connect>
+ 
+    );
+  }
 
-export default App;
+  componentDidMount() {
+    if (userSession.isSignInPending()) {
+      userSession.handlePendingSignIn().then(userData => {
+        window.history.replaceState({}, document.title, '/');
+        this.setState({ userData: userData });
+      });
+    } else if (userSession.isUserSignedIn()) {
+      this.setState({ userData: userSession.loadUserData() });
+    }
+  }
+}
