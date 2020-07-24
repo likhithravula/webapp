@@ -672,3 +672,220 @@ border-radius: 5px;
   border: 0;
   color: #FFFFFF;
  }
+
+ .time_nine{
+  position: absolute;
+  width: 143.06px;
+  height: 51.01px;
+  left: 54.37px;
+  top: 385px;
+  border-radius: 5px;
+ }
+
+#time9{
+  background: #ECECEC;
+  position: absolute;
+width: 134.12px;
+height: 23.08px;
+left: 59.48px;
+top: 399.58px;
+
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+
+#time9-selected{
+  background: #5FD680;
+  position: absolute;
+width: 134.12px;
+height: 23.08px;
+left: 59.48px;
+top: 399.58px;
+
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
+
+.time_ten{
+  position: absolute;
+width: 143.06px;
+height: 51.01px;
+left: 216.94px;
+top: 385px;
+
+
+border-radius: 5px;
+}
+
+#time10{
+  background: #ECECEC;
+  position: absolute;
+width: 134.12px;
+height: 23.08px;
+left: 222.05px;
+top: 399.58px;
+
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+
+.time10-selected{
+  background: #5FD680;
+  position: absolute;
+  width: 134.12px;
+  height: 23.08px;
+  left: 222.05px;
+  top: 399.58px;
+  
+  /* Button font - 16pt Semi Bold */
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 0.01em;
+  
+  color: #FFFFFF;
+}
+
+.time_eleven{
+  position: absolute;
+width: 143.06px;
+height: 51.01px;
+left: 54.37px;
+top: 449px;
+border-radius: 5px;
+}
+
+.time11{
+  background: #ECECEC;
+  position: absolute;
+width: 134.12px;
+height: 23.08px;
+left: 59.48px;
+top: 463.58px;
+
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+
+
+.time11-selected{
+  background: #5FD680;
+  position: absolute;
+width: 134.12px;
+height: 23.08px;
+left: 59.48px;
+top: 463.58px;
+
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
+
+.time_twelve{
+  position: absolute;
+width: 143.06px;
+height: 51.01px;
+left: 216.94px;
+top: 449px;
+
+
+border-radius: 5px;
+}
+
+#time12{
+  background: #ECECEC;
+  position: absolute;
+width: 134.12px;
+height: 23.08px;
+left: 222.05px;
+top: 463.58px;
+
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+}
+
+#time12-selected{
+  background: #5FD680;
+  position: absolute;
+width: 134.12px;
+height: 23.08px;
+left: 222.05px;
+top: 463.58px;
+
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
