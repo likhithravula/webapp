@@ -404,8 +404,10 @@ background: #68ADEC;
   position: absolute;
 width: 194px;
 height: 19px;
-left: 119px;
+left: 120px;
 top: 53px;
+bottom: 23px;
+right: 100px;
 
 font-family: Poppins;
 font-style: normal;
@@ -419,21 +421,22 @@ color: #FFFFFF;
 }
 
 .h4-availability{
-  position: absolute;
-width: 276px;
-height: 28px;
-left: 80px;
-top: 95px;
-
-/* Button font - 16pt Semi Bold */
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 24px;
-letter-spacing: 0.01em;
-
-color: #FFFFFF;
+  position: relative;
+  left: 81px;
+  top: 95px;
+  bottom: 17px;
+  right: 57px;
+  /* Button font - 16pt Semi Bold */
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  
+  color: #FFFFFF;
+  
+  
 }
 
 .weekdays{
@@ -680,16 +683,12 @@ border-radius: 5px;
   left: 54.37px;
   top: 385px;
   border-radius: 5px;
+  border: 0;
  }
 
-#time9{
+#time{
   background: #ECECEC;
-  position: absolute;
-width: 134.12px;
-height: 23.08px;
-left: 59.48px;
-top: 399.58px;
-
+  
 /* Button font - 16pt Semi Bold */
 font-family: Poppins;
 font-style: normal;
@@ -704,13 +703,8 @@ letter-spacing: 0.01em;
 color: #000000;
 }
 
-#time9-selected{
+#time-selected{
   background: #5FD680;
-  position: absolute;
-width: 134.12px;
-height: 23.08px;
-left: 59.48px;
-top: 399.58px;
 
 /* Button font - 16pt Semi Bold */
 font-family: Poppins;
@@ -732,54 +726,10 @@ width: 143.06px;
 height: 51.01px;
 left: 216.94px;
 top: 385px;
-
-
+border: 0;
 border-radius: 5px;
 }
 
-#time10{
-  background: #ECECEC;
-  position: absolute;
-width: 134.12px;
-height: 23.08px;
-left: 222.05px;
-top: 399.58px;
-
-/* Button font - 16pt Semi Bold */
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 24px;
-
-/* identical to box height */
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #000000;
-}
-
-.time10-selected{
-  background: #5FD680;
-  position: absolute;
-  width: 134.12px;
-  height: 23.08px;
-  left: 222.05px;
-  top: 399.58px;
-  
-  /* Button font - 16pt Semi Bold */
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  
-  /* identical to box height */
-  text-align: center;
-  letter-spacing: 0.01em;
-  
-  color: #FFFFFF;
-}
 
 .time_eleven{
   position: absolute;
@@ -787,53 +737,11 @@ width: 143.06px;
 height: 51.01px;
 left: 54.37px;
 top: 449px;
+border: 0;
 border-radius: 5px;
 }
 
-.time11{
-  background: #ECECEC;
-  position: absolute;
-width: 134.12px;
-height: 23.08px;
-left: 59.48px;
-top: 463.58px;
 
-/* Button font - 16pt Semi Bold */
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 24px;
-
-/* identical to box height */
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #000000;
-}
-
-
-.time11-selected{
-  background: #5FD680;
-  position: absolute;
-width: 134.12px;
-height: 23.08px;
-left: 59.48px;
-top: 463.58px;
-
-/* Button font - 16pt Semi Bold */
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 24px;
-
-/* identical to box height */
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #FFFFFF;
-}
 
 .time_twelve{
   position: absolute;
@@ -841,51 +749,119 @@ width: 143.06px;
 height: 51.01px;
 left: 216.94px;
 top: 449px;
+border: 0;
+border-radius: 5px;
+}
 
+
+.time_thirteen{
+  position: absolute;
+  width: 143.06px;
+  height: 51.01px;
+  left: 54.37px;
+  top: 512.16px;
+  border: 0;
+  border-radius: 5px;
+}
+
+
+
+.time_fourteen{
+  position: absolute;
+width: 143.06px;
+height: 51.01px;
+left: 217px;
+top: 513px;
+border: 0;
+border-radius: 5px;
+}
+
+
+
+.time_fifteen{
+  position: absolute;
+width: 143.06px;
+height: 51.01px;
+left: 54.37px;
+top: 576.53px;
+border: 0;
+border-radius: 5px;
+}
+
+
+.time_sixteen{
+  position: absolute;
+width: 143.06px;
+height: 51.01px;
+left: 216.68px;
+top: 576.53px;
+border: 0;
 
 border-radius: 5px;
 }
 
-#time12{
-  background: #ECECEC;
+
+
+.time_seventeen{
   position: absolute;
-width: 134.12px;
-height: 23.08px;
-left: 222.05px;
-top: 463.58px;
-
-/* Button font - 16pt Semi Bold */
-font-family: Poppins;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 24px;
-
-/* identical to box height */
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #000000;
+width: 143.06px;
+height: 51.01px;
+left: 53px;
+top: 640.84px;
+border: 0;
+border-radius: 5px;
 }
 
-#time12-selected{
-  background: #5FD680;
+.time_eighteen{
   position: absolute;
-width: 134.12px;
-height: 23.08px;
-left: 222.05px;
-top: 463.58px;
+width: 143.06px;
+height: 51.01px;
+left: 217.94px;
+top: 640.84px;
+border: 0;
+border-radius: 5px;
+}
 
-/* Button font - 16pt Semi Bold */
+.time_nineteen
+{
+  position: absolute;
+width: 143.06px;
+height: 51.01px;
+left: 54.37px;
+top: 704px;
+border: 0;
+border-radius: 5px;
+}
+
+.time_twenty{
+  position: absolute;
+width: 143.06px;
+height: 51.01px;
+left: 215.94px;
+top: 704px;
+border: 0;
+border-radius: 5px;
+}
+
+
+.save-availability{
+  position: absolute;
+  width: 354px;
+  height: 60px;
+  left: 33px;
+  right: 27px;
+  top: 801px;
+  bottom: 35px;
+  background: #68ADEC;
+border-radius: 10px;
 font-family: Poppins;
 font-style: normal;
-font-weight: 600;
+font-weight: bold;
 font-size: 16px;
 line-height: 24px;
-
+border: 0;
 /* identical to box height */
 text-align: center;
-letter-spacing: 0.01em;
 
 color: #FFFFFF;
 }
