@@ -6,6 +6,7 @@
   --req-color: #5CB85C;
   --decline-color: #D9534F;
   --hover-rating-color: #C0C0C0;
+  --availability-color: #5FD680;
 }
 
 * {
@@ -269,7 +270,7 @@ header .menuIcon {
 .food {
   background-image: url("../img/shopping.png");
 }
-
+/* 
 .medicine {
 
 }
@@ -284,7 +285,7 @@ header .menuIcon {
 
 .transport {
 
-}
+} */
 
 #pins-wrapper h3{
   text-align: left;
@@ -378,4 +379,232 @@ header .menuIcon {
 .decline-btn:active {
   background-color: var(--decline-color);
   border: 0;
+}
+
+
+/* UPDATE AVAILABILITY */
+.menu-nav{
+  position: absolute;
+  width: 26px;
+  height: 20px;
+  left: 20px;
+  top: 30px;
+}
+
+.profile-bg-availability{
+  position: absolute;
+width: 414px;
+height: 140px;
+left: -1px;
+top: 0px;
+
+background: #68ADEC;
+}
+.my-availability{
+  position: absolute;
+width: 194px;
+height: 19px;
+left: 119px;
+top: 53px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
+
+color: #FFFFFF;
+
+
+}
+
+.h4-availability{
+  position: absolute;
+width: 276px;
+height: 28px;
+left: 80px;
+top: 95px;
+
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
+
+.weekdays{
+  position: absolute;
+width: 148px;
+height: 53px;
+left: 51px;
+top: 174px;
+cursor: pointer;
+border-radius: 5px;
+border: 0;
+}
+
+
+
+#id-days{
+ background-color: #ECECEC;
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+
+}
+
+.weekdays-selected{
+  color: #FFFFFF;
+  background-color: #5FD680;
+}
+
+
+
+.weekends{
+  position: absolute;
+width: 148px;
+height: 53px;
+left: 218px;
+top: 174px;
+border: 0;
+background: #ECECEC;
+border-radius: 5px;
+}
+
+
+#id-ends{
+ 
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #000000;
+
+}
+
+.mon{
+  position: absolute;
+  width: 42.78px;
+  height: 39px;
+  left: 33px;
+  top: 241px;
+  border: 0;
+  
+  border-radius: 5px;
+}
+.tue{
+  position: absolute;
+width: 42.78px;
+height: 39px;
+left: 83.75px;
+top: 241px;
+border: 0;
+
+border-radius: 5px;
+}
+.wed{
+  position: absolute;
+width: 42.78px;
+height: 39px;
+left: 134.95px;
+top: 241px;
+border: 0;
+
+border-radius: 5px;
+}
+
+
+.thu{
+  position: absolute;
+width: 42.78px;
+height: 39px;
+left: 184.52px;
+top: 241px;
+border: 0;
+
+border-radius: 5px;
+}
+
+.fri{
+position: absolute;
+width: 42.78px;
+height: 39px;
+left: 235.27px;
+top: 241px;
+border:0;
+
+border-radius: 5px;
+}
+.sat{
+  position: absolute;
+width: 42.78px;
+height: 39px;
+left: 286.47px;
+top: 241px;
+border:0;
+border-radius: 5px;
+}
+
+
+.sun{
+  position: absolute;
+width: 42.78px;
+height: 39px;
+left: 337.22px; 
+top: 241px;
+border:0;
+
+border-radius: 5px;
+}
+
+#daily{
+  background: #ECECEC;
+  font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 174%;
+
+/* or 24px */
+text-align: center;
+}
+
+#daily:hover,
+#daily:focus,
+#daily:active{
+  color: #FFFFFF;
+  background: #5FD680;
+}
+
+
+
+.all-day{
+  position: absolute;
+width: 315px;
+height: 53px;
+left: 51px;
+top: 315px;
+border: 0;
+background: #ECECEC;
+border-radius: 5px;
 }
