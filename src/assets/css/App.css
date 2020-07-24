@@ -394,12 +394,13 @@ header .menuIcon {
 .profile-bg-availability{
   position: absolute;
 width: 414px;
-height: 140px;
+height: 157px;
 left: -1px;
 top: 0px;
 
 background: #68ADEC;
 }
+
 .my-availability{
   position: absolute;
 width: 194px;
@@ -408,7 +409,8 @@ left: 120px;
 top: 53px;
 bottom: 23px;
 right: 100px;
-
+text-align: center;
+justify-content: center;
 font-family: Poppins;
 font-style: normal;
 font-weight: 600;
@@ -421,7 +423,7 @@ color: #FFFFFF;
 }
 
 .h4-availability{
-  position: relative;
+  position: absolute;
   left: 81px;
   top: 95px;
   bottom: 17px;
@@ -431,6 +433,8 @@ color: #FFFFFF;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
+  justify-content: center;
+  text-align: center;
   line-height: 24px;
   letter-spacing: 0.01em;
   
