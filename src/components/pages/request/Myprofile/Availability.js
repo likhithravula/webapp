@@ -7,7 +7,11 @@ const Availability = () => {
     const [isWed, setIsWed] = useState(false);
     const [isThu, setIsThu] = useState(false); 
     const [isFri, setIsFri] = useState(false);
+    const [isSat, setisSat] = useState(false);
+    const [isSun, setisSun] = useState(false);
     const [isWeekdays, setIsWeekdays] = useState(false);
+    const [isWeekends, setisWeekends] = useState(false);
+    const [isAllday, setisAllday] = useState(false)
     // render() {
     return (
         <div>
@@ -17,27 +21,40 @@ const Availability = () => {
                 <h4 className='h4-availability'>you can select any section</h4>
             </div>
             <div>
-                <button className='weekdays' style={{background: isWeekdays?'#5FD680':null }} onClick={() => {
-                    setIsWeekdays(true);
-                    setIsMon(true);
-                    setIsTue(true);
-                    setIsWed(true);
-                    setIsThu(true);
-                    setIsFri(true);
+                <button className='weekdays'  id={isWeekdays? 'days-selected' : 'id-days'} onClick={() => {
+                    setIsWeekdays(!isWeekdays);
+                    setisWeekends(false);
+                    setisSat(false);
+                    setisSun(false)
+                    setIsMon(!isMon);
+                    setIsTue(!isTue);
+                    setIsWed(!isWed);
+                    setIsThu(!isThu);
+                    setIsFri(!isFri);
                 }}>Weekdays</button>
-                <button className='weekends' id='id-ends'>Weekends</button> 
+                <button className='weekends' id={isWeekends? 'ends-selected': 'id-ends'}  onClick={() => {
+                    setisWeekends(!isWeekends);
+                    setIsWeekdays(false)
+                    setisSat(!isSat);
+                    setisSun(!isSun);
+                    setIsMon(false);
+                    setIsTue(false);
+                    setIsWed(false);
+                    setIsThu(false);
+                    setIsFri(false);
+                    }}>Weekends</button> 
             </div>
             <div>
-                <button className='mon' id='daily1' style={{ background: isMon ? '#5FD680' : null }} onClick={()=>{setIsMon(!isMon)}}>Mon</button>
-                <button className='tue' id='daily1' style={{ background: isTue ? '#5FD680' : null }} onClick={()=>{setIsTue(!isTue)}}>Tue</button>
-                <button className='wed' id='daily1' style={{ background: isWed ? '#5FD680' : null }} onClick={()=>{setIsWed(!isWed)}}>Wed</button>
-                <button className='thu' id='daily1' style={{ background: isThu ? '#5FD680' : null }} onClick={()=>{setIsThu(!isThu)}}>Thu</button>
-                <button className='fri' id='daily1' style={{ background: isFri ? '#5FD680' : null }} onClick={()=>{setIsFri(!isFri)}}>Fri</button>
-                <button className='sat' id='daily1'>Sat</button>
-                <button className='sun' id='daily1'>Sun</button>
+                <button className='mon' id='daily' style={{ background: isMon ? '#5FD680' : null }} onClick={()=>{setIsMon(!isMon)}}>Mon</button>
+                <button className='tue' id='daily' style={{ background: isTue ? '#5FD680' : null }} onClick={()=>{setIsTue(!isTue)}}>Tue</button>
+                <button className='wed' id='daily' style={{ background: isWed ? '#5FD680' : null }} onClick={()=>{setIsWed(!isWed)}}>Wed</button>
+                <button className='thu' id='daily' style={{ background: isThu ? '#5FD680' : null }} onClick={()=>{setIsThu(!isThu)}}>Thu</button>
+                <button className='fri' id='daily' style={{ background: isFri ? '#5FD680' : null }} onClick={()=>{setIsFri(!isFri)}}>Fri</button>
+                <button className='sat' id='daily' style={{ background: isSat ? '#5FD680' : null }} onClick={()=>{setisSat(!isSat)}}>Sat</button>
+                <button className='sun' id='daily' style={{ background: isSun ? '#5FD680' : null }} onClick={()=>{setisSun(!isSun)}}>Sun</button>
             </div>
             <div>
-                <button className='all-day'>All day</button>
+                <button  className='All' id={isAllday? 'all-day-selected' : 'all-day' } onClick={() => setisAllday(!isAllday)}>All day</button>
             </div>
             <div>
                 <button>9:00-10:00</button>

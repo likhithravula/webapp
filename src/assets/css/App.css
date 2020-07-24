@@ -466,27 +466,8 @@ color: #000000;
 
 }
 
-.weekdays-selected{
-  color: #FFFFFF;
+#days-selected{
   background-color: #5FD680;
-}
-
-
-
-.weekends{
-  position: absolute;
-width: 148px;
-height: 53px;
-left: 218px;
-top: 174px;
-border: 0;
-background: #ECECEC;
-border-radius: 5px;
-}
-
-
-#id-ends{
- 
 /* Button font - 16pt Semi Bold */
 font-family: Poppins;
 font-style: normal;
@@ -498,9 +479,56 @@ line-height: 24px;
 text-align: center;
 letter-spacing: 0.01em;
 
-color: #000000;
+color: #FFFFFF;
 
 }
+
+.weekends{
+  position: absolute;
+width: 148px;
+height: 53px;
+left: 218px;
+top: 174px;
+border: 0;
+
+border-radius: 5px;
+}
+
+
+#id-ends{
+  background:  #ECECEC;
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color:#000000;
+
+}
+
+#ends-selected{
+  background: #5FD680;
+/* Button font - 16pt Semi Bold */
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+
+}
+
 
 .mon{
   position: absolute;
@@ -589,12 +617,6 @@ line-height: 174%;
 text-align: center;
 }
 
-#daily:hover,
-#daily:focus,
-#daily:active{
-  color: #FFFFFF;
-  background: #5FD680;
-}
 
 
 
@@ -608,3 +630,45 @@ border: 0;
 background: #ECECEC;
 border-radius: 5px;
 }
+
+
+.All{
+  position: absolute;
+width: 315px;
+height: 53px;
+left: 51px;
+top: 315px;
+
+
+border-radius: 5px;
+}
+ #all-day{
+ 
+  /* Button font - 16pt Semi Bold */
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  background: #ECECEC;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 0.01em;
+  border: 0;
+  color: #000000;
+ }
+
+ #all-day-selected{
+   /* Button font - 16pt Semi Bold */
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  background: #5FD680;
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 0.01em;
+  border: 0;
+  color: #FFFFFF;
+ }
