@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Availability from '../src/components/pages/request/Myprofile/Availability';
+import Hero from '../src/components/pages/request/Myprofile/Heroprofile';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Availability />
+    <Hero />
   </React.StrictMode>,
   document.getElementById('root')
 );

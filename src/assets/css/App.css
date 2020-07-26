@@ -869,3 +869,217 @@ text-align: center;
 
 color: #FFFFFF;
 }
+
+
+/* How do you like to help */
+
+.profile-bg-hero{
+  position: absolute;
+width: 414px;
+height: 219px;
+left: 0px;
+top: 0px;
+
+background: #68ADEC;
+
+
+   
+}
+
+.h1-hero{
+  position: absolute;
+width: 354px;
+height: 72px;
+left: 30px;
+top: 92px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
+
+.car-hero{
+  position: absolute;
+width: 247px;
+height: 16px;
+left: 59px;
+top: 272px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+color: #212121;
+
+
+}
+
+.car{
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 351px;
+  top: 269px;
+  
+  background: #5FD680;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+
+.deliver-hero{
+  position: absolute;
+width: 263px;
+height: 16px;
+left: 59px;
+top: 323px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+color: #212121;
+}
+
+.deliver{
+  position: absolute;
+width: 25px;
+height: 25px;
+left: 351px;
+top: 322px;
+
+
+}
+
+.shopping-hero{
+  position: absolute;
+width: 263px;
+height: 16px;
+left: 59px;
+top: 374px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+color: #212121;
+
+
+}
+
+
+.shopping{
+  position: absolute;
+width: 25px;
+height: 25px;
+left: 351px;
+top: 373px;
+}
+
+.walk-hero{
+  position: absolute;
+width: 247px;
+height: 16px;
+left: 59px;
+top: 425px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+color: #212121;
+
+
+}
+
+.walk{
+  position: absolute;
+width: 25px;
+height: 25px;
+left: 351px;
+top: 424px;
+}
+
+.furniture-hero{
+  position: absolute;
+  width: 292px;
+  height: 37px;
+  left: 59px;
+  top: 476px;
+  
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  
+  color: #212121;
+  
+  
+}
+
+.furniture{
+  position: absolute;
+width: 25px;
+height: 25px;
+left: 351px;
+top: 485px;
+}
+
+.covid{
+  position: absolute;
+width: 247px;
+height: 44px;
+left: 59px;
+top: 547px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+color: #212121;
+
+
+}
+
+.test{
+  position: absolute;
+width: 25px;
+height: 25px;
+left: 351px;
+top: 556px;
+
+
+}
+
+.hero-btn{
+  position: absolute;
+width: 354px;
+height: 60px;
+left: 30px;
+top: 661px;
+right: 30px;
+bottom: 179px;
+background: #68ADEC;
+border-radius: 10px;
+border: 0;
+
+}
+
