@@ -1083,3 +1083,44 @@ border: 0;
 
 }
 
+.food-hero_icon{
+  position: absolute;
+  top: 784px;
+  left: 63px;
+  right: 299.31px;
+  bottom: 56.97px;
+}
+
+.driving-hero_icon{
+  position: absolute;
+  top: 784px;
+  left: 147px;
+  right: 217.15px;
+  bottom: 56.97px
+}
+
+.med-hero_icon{
+  position: absolute;
+  top: 784px;
+  left: 227.33px;
+  right: 134.98px;
+  bottom: 56.97px
+}
+
+.others-hero_icon{
+  position: absolute;
+  top: 784px;
+  left: 300.5px;
+  right: 52.82px;
+  bottom: 56.97px
+}
+
+.vector-hero_icon{
+  position: absolute;
+  left: 32px;
+  top:  32px;
+  right: 371.83px;
+  bottom: 169px;
+  color: white;
+}
+
